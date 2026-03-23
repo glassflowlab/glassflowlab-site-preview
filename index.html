@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>100六角瓶｜商品頁預覽</title>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--brand2:#a98a72;--linegreen:#06c755}
     *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
@@ -47,7 +46,7 @@
     .btn.line::before{content:"LINE";font-weight:800;letter-spacing:.2px}
     .points{margin:0;padding-left:18px;color:#444}
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.section{padding:24px}.section h2{margin:0 0 14px;font-size:24px}
-    .highlight-grid,.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fcfbf9;display:flex;flex-direction:column;gap:6px}.card-icon{width:20px;height:20px;color:var(--brand);flex-shrink:0}
+    .highlight-grid,.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fcfbf9}
     table{width:100%;border-collapse:collapse} th,td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{width:34%;color:#555}
     details{border-top:1px solid var(--line);padding:14px 0} details:first-of-type{border-top:none;padding-top:0} summary{cursor:pointer;font-weight:700}
     .support{background:#fbf7f2}.mini-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
@@ -198,10 +197,10 @@
       <section class="section">
         <h2>核心賣點</h2>
         <div class="highlight-grid">
-          <div class="card"><i data-lucide="package" class="card-icon"></i><strong>100cc 容量</strong><br>適合果醬、辣椒醬、XO 醬、干貝醬與各式醬料分裝使用。</div>
-          <div class="card"><i data-lucide="hexagon" class="card-icon"></i><strong>六角瓶型</strong><br>辨識度高，陳列整齊時更有一致性。</div>
-          <div class="card"><i data-lucide="layers" class="card-icon"></i><strong>附蓋出貨</strong><br>可依需求選擇黑蓋、金蓋或綠蓋。</div>
-          <div class="card"><i data-lucide="shopping-bag" class="card-icon"></i><strong>適合販售與手作</strong><br>適用於內容型商品分裝、手作販售與小禮搭配。</div>
+          <div class="card"><strong>100cc 容量</strong><br>適合果醬、辣椒醬、XO 醬、干貝醬與各式醬料分裝使用。</div>
+          <div class="card"><strong>六角瓶型</strong><br>辨識度高，陳列整齊時更有一致性。</div>
+          <div class="card"><strong>附蓋出貨</strong><br>可依需求選擇黑蓋、金蓋或綠蓋。</div>
+          <div class="card"><strong>適合販售與手作</strong><br>適用於內容型商品分裝、手作販售與小禮搭配。</div>
         </div>
       </section>
 
@@ -234,10 +233,10 @@
     <section class="section" style="margin-top:24px">
       <h2>適合這些分裝與包裝用途</h2>
       <div class="scene-grid">
-        <div class="card"><i data-lucide="heart" class="card-icon"></i><strong>果醬分裝</strong><br>適合草莓果醬、柑橘果醬與各式手作抹醬的小容量盛裝。</div>
-        <div class="card"><i data-lucide="droplet" class="card-icon"></i><strong>醬料包裝</strong><br>適合辣椒醬、XO 醬、干貝醬等內容型商品的分裝與販售。</div>
-        <div class="card"><i data-lucide="scissors" class="card-icon"></i><strong>手作販售</strong><br>適合作為小批量手作商品的包裝瓶器，整體呈現更整齊。</div>
-        <div class="card"><i data-lucide="gift" class="card-icon"></i><strong>送禮搭配</strong><br>可搭配標籤、封口貼與包裝盒，作為小禮盒分裝容器。</div>
+        <div class="card"><strong>果醬分裝</strong><br>適合草莓果醬、柑橘果醬與各式手作抹醬的小容量盛裝。</div>
+        <div class="card"><strong>醬料包裝</strong><br>適合辣椒醬、XO 醬、干貝醬等內容型商品的分裝與販售。</div>
+        <div class="card"><strong>手作販售</strong><br>適合作為小批量手作商品的包裝瓶器，整體呈現更整齊。</div>
+        <div class="card"><strong>送禮搭配</strong><br>可搭配標籤、封口貼與包裝盒，作為小禮盒分裝容器。</div>
       </div>
     </section>
 
@@ -312,7 +311,6 @@
     </div>
   </footer>
   <script>
-    lucide.createIcons();
     (function(){
       const gallery = document.getElementById('product-gallery');
       if(!gallery) return;
