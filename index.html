@@ -24,7 +24,12 @@
     .subimg{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff}
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .note{font-size:13px;color:#7b6c61}
-    .panel{padding:24px}.eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:10px}
+    .panel{padding:24px}.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:12px;letter-spacing:.3px}.eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:10px}
+.price-block{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:4px 0 14px}.price-lg{font-size:30px;font-weight:800;color:var(--brand)}.price-unit{font-size:16px;color:var(--muted)}.per-unit-badge{display:inline-block;padding:4px 10px;background:#f4efe9;border:1px solid var(--line);border-radius:999px;font-size:12px;color:#5b4a3e;font-weight:700}
+.trust-strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.trust-chip{display:inline-flex;align-items:center;padding:6px 10px;background:#fbf7f2;border:1px solid var(--line);border-radius:999px;font-size:12px;color:#5b4a3e;font-weight:700}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}.btn-ghost{background:#fff;color:var(--brand);border:1px solid var(--line);border-radius:12px;padding:12px 18px;text-decoration:none;font-weight:700;display:inline-block;text-align:center;flex:1;min-width:140px}
+.option-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 16px}.option-label{font-size:13px;font-weight:700;color:var(--text)}.cap-chips{display:flex;gap:8px}.cap-chip{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#faf8f5;font-size:13px;color:#5b4a3e;font-weight:700}
+.sell-points{margin:0;padding-left:18px;color:#444;font-size:14px}
     h1{margin:0 0 8px;font-size:34px;line-height:1.2} .subtitle{color:var(--muted);font-size:16px;margin:0 0 18px}
     .price{font-size:30px;font-weight:800;color:var(--brand);margin:4px 0}.shipping{color:#9a4e32;font-weight:700;margin-bottom:12px}
     .price-note{display:flex;flex-wrap:wrap;gap:8px 10px;margin-bottom:16px}
@@ -60,8 +65,9 @@
       .site-header .brand-name{font-size:17px !important;white-space:nowrap;line-height:1.1}
       .site-header nav{display:none !important}
       .hero{gap:18px}
-      .panel{padding:18px}
       .actions .btn{width:100%;text-align:center}
+      .cta-row .btn{width:100%;text-align:center}
+      .panel{padding:20px}
       .category-strip{grid-template-columns:1fr 1fr}
       .sticky-buybar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:10px;gap:10px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
       .sticky-buybar .meta{min-width:0;flex:1}
@@ -103,7 +109,6 @@
   </header>
 
   <div class="wrap">
-    <div style="font-size:13px;color:#7a6c60;margin-bottom:16px">首頁 / 寬口瓶 / 100六角瓶</div>
     <div class="category-strip">
       <a class="category-item" href="#">寬口瓶</a>
       <a class="category-item" href="#">窄口瓶</a>
@@ -139,45 +144,55 @@
       </section>
 
       <section class="panel">
-        <div class="eyebrow">玻璃小店｜寬口瓶 / 果醬瓶</div>
-        <h1>100六角瓶</h1>
-        <p class="subtitle">100cc 小容量六角玻璃瓶，適合果醬、辣椒醬、XO 醬與手作分裝；附蓋出貨，一箱 50 支，陳列整齊也更有商品感。</p>
-        <div class="price">NT$499 / 一箱 50 支</div>
-        <div class="shipping">運費另計</div>
-        <div class="price-note">
-          <span class="pill">平均單支約 NT$9.98</span>
-          <span class="pill">附蓋出貨</span>
-          <span class="pill">黑 / 金 / 綠 蓋可選</span>
+        <!-- 1. Breadcrumb -->
+        <div class="breadcrumb">首頁 / 寬口瓶 / 100六角瓶</div>
+
+        <!-- 2. Eyebrow -->
+        <div class="eyebrow">寬口瓶・果醬瓶</div>
+
+        <!-- 3. H1 -->
+        <h1>100cc 六角玻璃瓶｜果醬 / 辣醬 / 分裝首選</h1>
+
+        <!-- 4. Subtitle -->
+        <p class="subtitle">小量試賣、品牌分裝都適合，附蓋出貨，開箱即可使用</p>
+
+        <!-- 5. Price block -->
+        <div class="price-block">
+          <span class="price-lg">NT$499</span>
+          <span class="price-unit">/ 一箱 50 支</span>
+          <span class="per-unit-badge">平均每支不到 NT$10</span>
         </div>
 
-        <div class="trust-box">
-          <div class="trust-title">購買前先看這幾點</div>
-          <ul class="trust-list">
-            <li>桃園八德出貨，玻璃商品會妥善包裝</li>
-            <li>運費依數量與配送方式另計，可先 LINE 詢問</li>
-            <li>大量採購、蓋色搭配、其他瓶器需求都可協助確認</li>
-          </ul>
+        <!-- 6. Trust strip -->
+        <div class="trust-strip">
+          <span class="trust-chip">台灣現貨｜快速出貨不延誤</span>
+          <span class="trust-chip">附蓋出貨｜黑 / 金 / 綠蓋可選</span>
+          <span class="trust-chip">適合果醬、辣醬、蜂蜜與品牌分裝</span>
+          <span class="trust-chip">小量批發｜新手賣家也能輕鬆開始</span>
         </div>
 
-        <div class="option">
-          <strong>瓶蓋顏色</strong>
-          <div class="chips" style="margin-top:10px">
-            <div class="chip">黑蓋</div>
-            <div class="chip">金蓋</div>
-            <div class="chip">綠蓋</div>
+        <!-- 7. CTA row -->
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="#specs">查看完整規格</a>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢問庫存與蓋色（即時回覆）</a>
+        </div>
+        <p style="font-size:12px;color:#888;margin:0 0 16px">桃園現貨出貨｜有問題可直接LINE詢問，我會幫你搭配</p>
+
+        <!-- 8. Option selector -->
+        <div class="option-row">
+          <span class="option-label">瓶蓋顏色</span>
+          <div class="cap-chips">
+            <span class="cap-chip">黑蓋</span>
+            <span class="cap-chip">金蓋</span>
+            <span class="cap-chip">綠蓋</span>
           </div>
         </div>
 
-        <div class="actions">
-          <a class="btn primary" href="#specs">查看規格後下單</a>
-          <a class="btn ghost" href="#faq-block">先看常見問題</a>
-          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問運費 / 蓋色</a>
-        </div>
-
-        <ul class="points">
-          <li>適合果醬、辣椒醬、XO 醬、干貝醬與小份量分裝</li>
-          <li>六角瓶型辨識度高，貼標與陳列更俐落</li>
-          <li>小容量入門規格，適合手作販售、試吃罐與伴手禮搭配</li>
+        <!-- 9. Short bullet list -->
+        <ul class="sell-points">
+          <li>100cc 小容量，適合果醬、辣醬、手作分裝</li>
+          <li>六角瓶型辨識度高，陳列與貼標更俐落</li>
+          <li>一箱 50 支，入門門檻低，適合試賣與伴手禮</li>
         </ul>
       </section>
     </div>
