@@ -8,6 +8,7 @@
     :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--brand2:#a98a72;--linegreen:#06c755}
     *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
     .wrap{max-width:1180px;margin:0 auto;padding:24px}
+    .topbar{background:#efe7df;color:#6a5647;font-size:13px;border-bottom:1px solid var(--line)}
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
     .gallery,.panel,.section{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
     .gallery-main{position:relative;overflow:hidden;background:#eee}
@@ -34,6 +35,7 @@
     .option{margin:16px 0}.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#faf8f5}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 14px}.btn{padding:13px 18px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block}
     .btn.primary{background:var(--brand);color:#fff}.btn.secondary{background:#efe7df;color:var(--brand)}
+    .btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}
     .btn.line{background:#06c755;color:#fff;display:inline-flex;align-items:center;border-radius:12px;padding:12px 18px;box-shadow:0 6px 18px rgba(6,199,85,.18)}
     .btn.line:hover{background:#05b44d}
     .btn.line::before{content:"LINE";font-weight:800;letter-spacing:.2px}
@@ -43,6 +45,9 @@
     table{width:100%;border-collapse:collapse} th,td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{width:34%;color:#555}
     details{border-top:1px solid var(--line);padding:14px 0} details:first-of-type{border-top:none;padding-top:0} summary{cursor:pointer;font-weight:700}
     .support{background:#fbf7f2}.mini-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .category-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+    .category-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center;color:#5b4a3e;text-decoration:none;font-weight:700}
+    .sticky-buybar{display:none}
     @media (max-width:900px){
       .hero,.grid2,.highlight-grid,.scene-grid{grid-template-columns:1fr}
       h1{font-size:28px}
@@ -57,6 +62,13 @@
       .hero{gap:18px}
       .panel{padding:18px}
       .actions .btn{width:100%;text-align:center}
+      .category-strip{grid-template-columns:1fr 1fr}
+      .sticky-buybar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:10px;gap:10px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+      .sticky-buybar .meta{min-width:0;flex:1}
+      .sticky-buybar .meta strong{display:block;font-size:14px;color:var(--brand);line-height:1.2}
+      .sticky-buybar .meta span{display:block;font-size:12px;color:var(--muted)}
+      .sticky-buybar .btn{padding:11px 14px}
+      .site-footer{padding-bottom:82px}
       .site-footer .wrap{grid-template-columns:1fr !important;gap:16px !important;padding-top:22px !important;padding-bottom:22px !important}
       .site-footer .footer-title{font-size:18px !important;margin-bottom:6px !important}
       .site-footer .footer-copy,.site-footer .footer-muted{font-size:14px !important;line-height:1.6}
@@ -65,6 +77,13 @@
   </style>
 </head>
 <body>
+  <div class="topbar">
+    <div class="wrap" style="display:flex;justify-content:center;gap:18px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap">
+      <span>桃園八德出貨</span>
+      <span>玻璃商品妥善包裝</span>
+      <span>大量採購可先 LINE 詢問</span>
+    </div>
+  </div>
   <header class="site-header" style="background:#fff;border-bottom:1px solid #e7e0d7;position:sticky;top:0;z-index:10">
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:14px;padding-bottom:14px">
       <div style="display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:0">
@@ -85,6 +104,12 @@
 
   <div class="wrap">
     <div style="font-size:13px;color:#7a6c60;margin-bottom:16px">首頁 / 寬口瓶 / 100六角瓶</div>
+    <div class="category-strip">
+      <a class="category-item" href="#">寬口瓶</a>
+      <a class="category-item" href="#">窄口瓶</a>
+      <a class="category-item" href="#">包裝配件</a>
+      <a class="category-item" href="#faq-block">常見問題</a>
+    </div>
     <div class="hero">
       <section class="gallery">
         <div class="gallery-main" id="product-gallery">
@@ -145,6 +170,7 @@
 
         <div class="actions">
           <a class="btn primary" href="#specs">查看規格後下單</a>
+          <a class="btn ghost" href="#faq-block">先看常見問題</a>
           <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問運費 / 蓋色</a>
         </div>
 
@@ -218,7 +244,7 @@
     </section>
 
     <div class="grid2">
-      <section class="section support" style="margin-top:24px">
+      <section class="section support" style="margin-top:24px" id="faq-block">
         <h2>常見問題</h2>
         <details open><summary>100六角瓶是怎麼販售？</summary><p>本商品以一箱 50 支販售，適合備貨、手作分裝與小量販售使用。</p></details>
         <details><summary>商品是否附蓋？</summary><p>有，附蓋出貨，可依需求選擇黑蓋、金蓋或綠蓋。</p></details>
@@ -247,6 +273,14 @@
         </div>
       </section>
     </div>
+  </div>
+
+  <div class="sticky-buybar">
+    <div class="meta">
+      <strong>100六角瓶 NT$499 / 50支</strong>
+      <span>附蓋出貨・可先詢問運費 / 蓋色</span>
+    </div>
+    <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問</a>
   </div>
 
   <footer class="site-footer" style="margin-top:32px;background:#3a2d25;color:#f5eee7">
