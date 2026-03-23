@@ -15,16 +15,22 @@
     .gallery-slide{min-width:100%;user-select:none}
     .mainimg{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eee;display:block}
     .gallery-dots{display:none;position:absolute;left:50%;bottom:12px;transform:translateX(-50%);gap:8px;z-index:2}
+    .gallery-count{position:absolute;right:12px;bottom:12px;background:rgba(34,34,34,.62);color:#fff;padding:5px 9px;border-radius:999px;font-size:12px;z-index:2}
     .gallery-dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.55);border:none;padding:0}
     .gallery-dot.active{background:#fff}
-    .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px}
+    .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:12px}
     .thumb{border:1px solid var(--line);border-radius:12px;padding:6px;background:#faf8f5;text-align:center;font-size:12px;color:var(--muted)}
     .subimg{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff}
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .note{font-size:13px;color:#7b6c61}
     .panel{padding:24px}.eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:10px}
     h1{margin:0 0 8px;font-size:34px;line-height:1.2} .subtitle{color:var(--muted);font-size:16px;margin:0 0 18px}
-    .price{font-size:30px;font-weight:800;color:var(--brand);margin:4px 0}.shipping{color:#9a4e32;font-weight:700;margin-bottom:16px}
+    .price{font-size:30px;font-weight:800;color:var(--brand);margin:4px 0}.shipping{color:#9a4e32;font-weight:700;margin-bottom:12px}
+    .price-note{display:flex;flex-wrap:wrap;gap:8px 10px;margin-bottom:16px}
+    .pill{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;background:#f4efe9;border:1px solid var(--line);font-size:13px;color:#5b4a3e;font-weight:700}
+    .trust-box{background:#fbf7f2;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:16px 0}
+    .trust-title{font-size:14px;font-weight:800;color:var(--brand);margin-bottom:8px}
+    .trust-list{margin:0;padding-left:18px;color:#4d4036}
     .option{margin:16px 0}.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#faf8f5}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 14px}.btn{padding:13px 18px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block}
     .btn.primary{background:var(--brand);color:#fff}.btn.secondary{background:#efe7df;color:var(--brand)}
@@ -42,12 +48,15 @@
       h1{font-size:28px}
       .wrap{padding:16px}
       .gallery-dots{display:flex}
+      .thumbs{display:none}
       .site-header .wrap{padding-top:10px !important;padding-bottom:10px !important;gap:12px !important}
       .site-header .brand-mark{width:40px !important;height:40px !important;border-radius:10px !important}
       .site-header .brand-kicker{display:none}
       .site-header .brand-name{font-size:17px !important;white-space:nowrap;line-height:1.1}
-      .site-header nav{gap:10px !important;font-size:13px !important;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;-webkit-overflow-scrolling:touch}
-      .site-header nav a{white-space:nowrap}
+      .site-header nav{display:none !important}
+      .hero{gap:18px}
+      .panel{padding:18px}
+      .actions .btn{width:100%;text-align:center}
       .site-footer .wrap{grid-template-columns:1fr !important;gap:16px !important;padding-top:22px !important;padding-bottom:22px !important}
       .site-footer .footer-title{font-size:18px !important;margin-bottom:6px !important}
       .site-footer .footer-copy,.site-footer .footer-muted{font-size:14px !important;line-height:1.6}
@@ -68,8 +77,6 @@
       <nav style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px">
         <a href="#" style="color:#4d4036;text-decoration:none">首頁</a>
         <a href="#" style="color:#4d4036;text-decoration:none">寬口瓶</a>
-        <a href="#" style="color:#4d4036;text-decoration:none">窄口瓶</a>
-        <a href="#" style="color:#4d4036;text-decoration:none">包裝配件</a>
         <a href="#" style="color:#4d4036;text-decoration:none">FAQ</a>
         <a href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url" style="color:#4d4036;text-decoration:none">LINE客服</a>
       </nav>
@@ -95,6 +102,7 @@
             <button class="gallery-dot" type="button"></button>
             <button class="gallery-dot" type="button"></button>
           </div>
+          <div class="gallery-count"><span id="gallery-current">1</span>/5</div>
         </div>
         <div class="thumbs">
           <div class="thumb" data-slide="0"><img src="assets/100六角瓶/main.jpg" alt="主圖" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px"><div style="margin-top:6px">主圖</div></div>
@@ -108,9 +116,23 @@
       <section class="panel">
         <div class="eyebrow">玻璃小店｜寬口瓶 / 果醬瓶</div>
         <h1>100六角瓶</h1>
-        <p class="subtitle">適合果醬、辣椒醬、XO醬、干貝醬與小份量分裝的六角玻璃瓶，附蓋出貨，可依蓋色選擇搭配。</p>
+        <p class="subtitle">100cc 小容量六角玻璃瓶，適合果醬、辣椒醬、XO 醬與手作分裝；附蓋出貨，一箱 50 支，陳列整齊也更有商品感。</p>
         <div class="price">NT$499 / 一箱 50 支</div>
-        <div class="shipping">運費外加</div>
+        <div class="shipping">運費另計</div>
+        <div class="price-note">
+          <span class="pill">平均單支約 NT$9.98</span>
+          <span class="pill">附蓋出貨</span>
+          <span class="pill">黑 / 金 / 綠 蓋可選</span>
+        </div>
+
+        <div class="trust-box">
+          <div class="trust-title">購買前先看這幾點</div>
+          <ul class="trust-list">
+            <li>桃園八德出貨，玻璃商品會妥善包裝</li>
+            <li>運費依數量與配送方式另計，可先 LINE 詢問</li>
+            <li>大量採購、蓋色搭配、其他瓶器需求都可協助確認</li>
+          </ul>
+        </div>
 
         <div class="option">
           <strong>瓶蓋顏色</strong>
@@ -122,17 +144,14 @@
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="#">加入購物車</a>
-          <a class="btn secondary" href="#">立即購買</a>
-          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問</a>
+          <a class="btn primary" href="#specs">查看規格後下單</a>
+          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問運費 / 蓋色</a>
         </div>
 
         <ul class="points">
-          <li>100cc 小容量，適合醬料與果醬分裝</li>
-          <li>六角瓶型清楚好辨識，陳列更整齊</li>
-          <li>附蓋出貨，可依顏色選擇瓶蓋</li>
-          <li>適合果醬、辣椒醬、XO醬、干貝醬等內容物</li>
-          <li>一箱 50 支，適合備貨、販售與手作分裝</li>
+          <li>適合果醬、辣椒醬、XO 醬、干貝醬與小份量分裝</li>
+          <li>六角瓶型辨識度高，貼標與陳列更俐落</li>
+          <li>小容量入門規格，適合手作販售、試吃罐與伴手禮搭配</li>
         </ul>
       </section>
     </div>
@@ -148,7 +167,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="specs">
         <h2>商品規格</h2>
         <table>
           <tr><th>商品名稱</th><td>100六角瓶</td></tr>
@@ -168,10 +187,13 @@
     </div>
 
     <section class="section" style="margin-top:24px">
-      <h2>商品介紹</h2>
-      <p>100六角瓶是一款適合小容量分裝使用的玻璃瓶器，常用於果醬、辣椒醬、XO醬、干貝醬與其他醬料類內容物盛裝。六角瓶型不只方便辨識，也讓整體陳列更整齊俐落，無論是自用、販售、手作分裝或送禮搭配，都有很高的實用性。</p>
-      <p>對需要小容量包裝的人來說，容器不只是裝填工具，也會影響商品呈現與使用便利。100六角瓶具備清楚的瓶型輪廓與穩定的容量設定，適合用來做小份量產品包裝、手工醬料分裝，或作為品牌商品的入門規格瓶器。</p>
-      <p>本商品附蓋出貨，並可依需求選擇不同瓶蓋顏色，讓整體包裝更符合產品風格與品牌感。</p>
+      <h2>這款適合誰</h2>
+      <div class="highlight-grid">
+        <div class="card"><strong>手作果醬 / 辣醬賣家</strong><br>小容量好分裝，適合做入門商品、試吃罐或伴手禮搭配。</div>
+        <div class="card"><strong>想要更整齊陳列的人</strong><br>六角瓶型辨識度高，貼標後更有商品感，也方便成列展示。</div>
+        <div class="card"><strong>需要附蓋出貨</strong><br>可直接選黑蓋、金蓋、綠蓋，減少另外配件搭配的麻煩。</div>
+        <div class="card"><strong>不想一次做太大容量</strong><br>100cc 適合小份量分裝，不會像大瓶那樣太佔空間或太難試賣。</div>
+      </div>
     </section>
 
     <section class="section" style="margin-top:24px">
@@ -185,8 +207,8 @@
     </section>
 
     <section class="section" style="margin-top:24px">
-      <h2>商品圖片補充</h2>
-      <p class="note">以下圖片直接取自玻璃小店資料夾，作為商品頁第三版預覽用素材。</p>
+      <h2>商品細節實拍</h2>
+      <p class="note">提供主圖、蓋色與瓶身角度參考，實際出貨款式以選擇規格為準。</p>
       <div class="gallery-grid">
         <div><img class="subimg" src="assets/100六角瓶/main.jpg" alt="100六角瓶補充主圖"><div class="note">補充主圖</div></div>
         <div><img class="subimg" src="assets/100六角瓶/black.jpg" alt="100六角瓶黑蓋細節"><div class="note">黑蓋細節</div></div>
@@ -198,30 +220,30 @@
     <div class="grid2">
       <section class="section support" style="margin-top:24px">
         <h2>常見問題</h2>
-        <details open><summary>100六角瓶是怎麼販售？</summary><p>本商品以一箱 50 支販售。</p></details>
-        <details><summary>商品是否附蓋？</summary><p>有，附蓋出貨。</p></details>
-        <details><summary>瓶蓋可以選擇嗎？</summary><p>可以，目前瓶蓋選項依顏色分類，可依需求選擇黑蓋、金蓋或綠蓋。</p></details>
+        <details open><summary>100六角瓶是怎麼販售？</summary><p>本商品以一箱 50 支販售，適合備貨、手作分裝與小量販售使用。</p></details>
+        <details><summary>商品是否附蓋？</summary><p>有，附蓋出貨，可依需求選擇黑蓋、金蓋或綠蓋。</p></details>
+        <details><summary>運費怎麼計算？</summary><p>商品價格不含運費，會依數量、配送方式與寄送地區另外計算；若想先確認可透過 LINE 詢問。</p></details>
         <details><summary>適合裝什麼內容物？</summary><p>適合果醬、辣椒醬、XO 醬、干貝醬與其他小份量醬料分裝使用。</p></details>
-        <details><summary>商品價格是否包含運費？</summary><p>不含，運費外加。</p></details>
+        <details><summary>大量採購或搭配其他瓶器可以詢問嗎？</summary><p>可以，如果你有大量採購、搭配其他瓶器或想確認蓋色差異，都可以先透過 LINE 聯繫。</p></details>
       </section>
 
       <section class="section support" style="margin-top:24px">
         <h2>購買前請先了解</h2>
         <ul>
-          <li>本商品售價為 NT$499 / 一箱 50 支</li>
-          <li>商品價格不含運費，運費另計</li>
+          <li>本商品售價為 NT$499 / 一箱 50 支，平均單支約 NT$9.98</li>
+          <li>商品價格不含運費，運費會依數量與配送方式另外計算</li>
           <li>商品附蓋出貨，瓶蓋可依顏色選擇</li>
-          <li>若有大量採購、搭配需求或瓶蓋選擇問題，可先透過 LINE 詢問</li>
-          <li>實際出貨與配送規則請以配送說明頁為準</li>
+          <li>如需大量採購、搭配需求或蓋色建議，可先透過 LINE 詢問</li>
+          <li>玻璃商品會妥善包裝，實際出貨與配送規則請以說明為準</li>
         </ul>
         <div class="mini-card" style="margin-top:18px">
-          <strong>想確認蓋色或搭配方式？</strong>
-          <p style="margin:8px 0 14px">如果你想確認黑蓋、金蓋、綠蓋的搭配差異，或想詢問其他瓶器一起搭配，歡迎加入 LINE 官方帳號與我們聯繫。</p>
-          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問</a>
+          <strong>想先確認運費或蓋色？</strong>
+          <p style="margin:8px 0 14px">如果你想先確認黑蓋、金蓋、綠蓋的搭配差異，或想詢問其他瓶器一起搭配，歡迎加入 LINE 官方帳號與我們聯繫。</p>
+          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問運費 / 蓋色</a>
         </div>
         <div class="mini-card" style="margin-top:18px;background:#fffaf6">
-          <strong>第三版微調</strong>
-          <p style="margin:8px 0 0">本版已補上頁首、頁尾、真實圖片、LINE 連結與更完整的商品圖片區，接下來可繼續補更多情境圖與站內導覽。</p>
+          <strong>客服與出貨提醒</strong>
+          <p style="margin:8px 0 0">桃園八德出貨。若你是手作品牌、餐飲分裝或需要大量採購，也可以先透過 LINE 與我們確認更適合的瓶器搭配。</p>
         </div>
       </section>
     </div>
@@ -253,6 +275,7 @@
       const track = gallery.querySelector('.gallery-track');
       const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
       const dots = Array.from(gallery.querySelectorAll('.gallery-dot'));
+      const counter = document.getElementById('gallery-current');
       const thumbs = Array.from(document.querySelectorAll('.thumb[data-slide]'));
       let index = 0;
       let startX = 0;
@@ -262,6 +285,7 @@
       function render(){
         track.style.transform = `translateX(-${index * 100}%)`;
         dots.forEach((dot,i)=>dot.classList.toggle('active', i===index));
+        if(counter) counter.textContent = String(index + 1);
         thumbs.forEach((thumb,i)=>{
           thumb.style.borderColor = i===index ? '#06c755' : 'var(--line)';
           thumb.style.boxShadow = i===index ? '0 0 0 2px rgba(6,199,85,.12) inset' : 'none';
