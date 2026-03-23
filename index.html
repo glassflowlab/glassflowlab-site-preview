@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>100六角瓶｜商品頁預覽</title>
+  <style>
+    :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--brand2:#a98a72;--linegreen:#06c755}
+    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    .wrap{max-width:1180px;margin:0 auto;padding:24px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+    .gallery,.panel,.section{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .gallery-main{position:relative;overflow:hidden;background:#eee}
+    .gallery-track{display:flex;transition:transform .28s ease;touch-action:pan-y}
+    .gallery-slide{min-width:100%;user-select:none}
+    .mainimg{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eee;display:block}
+    .gallery-dots{display:none;position:absolute;left:50%;bottom:12px;transform:translateX(-50%);gap:8px;z-index:2}
+    .gallery-dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.55);border:none;padding:0}
+    .gallery-dot.active{background:#fff}
+    .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px}
+    .thumb{border:1px solid var(--line);border-radius:12px;padding:6px;background:#faf8f5;text-align:center;font-size:12px;color:var(--muted)}
+    .subimg{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .note{font-size:13px;color:#7b6c61}
+    .panel{padding:24px}.eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:10px}
+    h1{margin:0 0 8px;font-size:34px;line-height:1.2} .subtitle{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .price{font-size:30px;font-weight:800;color:var(--brand);margin:4px 0}.shipping{color:#9a4e32;font-weight:700;margin-bottom:16px}
+    .option{margin:16px 0}.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#faf8f5}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 14px}.btn{padding:13px 18px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block}
+    .btn.primary{background:var(--brand);color:#fff}.btn.secondary{background:#efe7df;color:var(--brand)}
+    .btn.line{background:#06c755;color:#fff;display:inline-flex;align-items:center;border-radius:12px;padding:12px 18px;box-shadow:0 6px 18px rgba(6,199,85,.18)}
+    .btn.line:hover{background:#05b44d}
+    .btn.line::before{content:"LINE";font-weight:800;letter-spacing:.2px}
+    .points{margin:0;padding-left:18px;color:#444}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.section{padding:24px}.section h2{margin:0 0 14px;font-size:24px}
+    .highlight-grid,.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fcfbf9}
+    table{width:100%;border-collapse:collapse} th,td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{width:34%;color:#555}
+    details{border-top:1px solid var(--line);padding:14px 0} details:first-of-type{border-top:none;padding-top:0} summary{cursor:pointer;font-weight:700}
+    .support{background:#fbf7f2}.mini-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    @media (max-width:900px){
+      .hero,.grid2,.highlight-grid,.scene-grid{grid-template-columns:1fr}
+      h1{font-size:28px}
+      .wrap{padding:16px}
+      .gallery-dots{display:flex}
+      .site-header .wrap{padding-top:10px !important;padding-bottom:10px !important;gap:12px !important}
+      .site-header .brand-mark{width:40px !important;height:40px !important;border-radius:10px !important}
+      .site-header .brand-kicker{display:none}
+      .site-header .brand-name{font-size:17px !important;white-space:nowrap;line-height:1.1}
+      .site-header nav{gap:10px !important;font-size:13px !important;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+      .site-header nav a{white-space:nowrap}
+      .site-footer .wrap{grid-template-columns:1fr !important;gap:16px !important;padding-top:22px !important;padding-bottom:22px !important}
+      .site-footer .footer-title{font-size:18px !important;margin-bottom:6px !important}
+      .site-footer .footer-copy,.site-footer .footer-muted{font-size:14px !important;line-height:1.6}
+      .site-footer .footer-col-title{margin-bottom:6px !important}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" style="background:#fff;border-bottom:1px solid #e7e0d7;position:sticky;top:0;z-index:10">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:14px;padding-bottom:14px">
+      <div style="display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:0">
+        <img class="brand-mark" src="assets/common/logo.png" alt="玻璃小店 logo" style="width:56px;height:56px;object-fit:contain;border-radius:12px;background:#fff">
+        <div style="min-width:0">
+          <div class="brand-kicker" style="font-size:13px;color:#8a7767">玻璃小店｜食品保存・日常收納・瓶器包材</div>
+          <div class="brand-name" style="font-size:24px;font-weight:800;color:#6f5b4b">玻璃小店</div>
+        </div>
+      </div>
+      <nav style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px">
+        <a href="#" style="color:#4d4036;text-decoration:none">首頁</a>
+        <a href="#" style="color:#4d4036;text-decoration:none">寬口瓶</a>
+        <a href="#" style="color:#4d4036;text-decoration:none">窄口瓶</a>
+        <a href="#" style="color:#4d4036;text-decoration:none">包裝配件</a>
+        <a href="#" style="color:#4d4036;text-decoration:none">FAQ</a>
+        <a href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url" style="color:#4d4036;text-decoration:none">LINE客服</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div style="font-size:13px;color:#7a6c60;margin-bottom:16px">首頁 / 寬口瓶 / 100六角瓶</div>
+    <div class="hero">
+      <section class="gallery">
+        <div class="gallery-main" id="product-gallery">
+          <div class="gallery-track">
+            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/main.jpg" alt="100六角瓶主圖"></div>
+            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/black.jpg" alt="黑蓋版本"></div>
+            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/gold.jpg" alt="金蓋版本"></div>
+            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/green.jpg" alt="綠蓋版本"></div>
+            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/detail.jpg" alt="瓶身細節"></div>
+          </div>
+          <div class="gallery-dots" aria-hidden="true">
+            <button class="gallery-dot active" type="button"></button>
+            <button class="gallery-dot" type="button"></button>
+            <button class="gallery-dot" type="button"></button>
+            <button class="gallery-dot" type="button"></button>
+            <button class="gallery-dot" type="button"></button>
+          </div>
+        </div>
+        <div class="thumbs">
+          <div class="thumb" data-slide="0"><img src="assets/100六角瓶/main.jpg" alt="主圖" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px"><div style="margin-top:6px">主圖</div></div>
+          <div class="thumb" data-slide="1"><img src="assets/100六角瓶/black.jpg" alt="黑蓋版本" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px"><div style="margin-top:6px">黑蓋版本</div></div>
+          <div class="thumb" data-slide="2"><img src="assets/100六角瓶/gold.jpg" alt="金蓋版本" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px"><div style="margin-top:6px">金蓋版本</div></div>
+          <div class="thumb" data-slide="3"><img src="assets/100六角瓶/green.jpg" alt="綠蓋版本" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px"><div style="margin-top:6px">綠蓋版本</div></div>
+          <div class="thumb" data-slide="4"><img src="assets/100六角瓶/detail.jpg" alt="瓶身細節" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px"><div style="margin-top:6px">瓶身細節</div></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="eyebrow">玻璃小店｜寬口瓶 / 果醬瓶</div>
+        <h1>100六角瓶</h1>
+        <p class="subtitle">適合果醬、辣椒醬、XO醬、干貝醬與小份量分裝的六角玻璃瓶，附蓋出貨，可依蓋色選擇搭配。</p>
+        <div class="price">NT$499 / 一箱 50 支</div>
+        <div class="shipping">運費外加</div>
+
+        <div class="option">
+          <strong>瓶蓋顏色</strong>
+          <div class="chips" style="margin-top:10px">
+            <div class="chip">黑蓋</div>
+            <div class="chip">金蓋</div>
+            <div class="chip">綠蓋</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="#">加入購物車</a>
+          <a class="btn secondary" href="#">立即購買</a>
+          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問</a>
+        </div>
+
+        <ul class="points">
+          <li>100cc 小容量，適合醬料與果醬分裝</li>
+          <li>六角瓶型清楚好辨識，陳列更整齊</li>
+          <li>附蓋出貨，可依顏色選擇瓶蓋</li>
+          <li>適合果醬、辣椒醬、XO醬、干貝醬等內容物</li>
+          <li>一箱 50 支，適合備貨、販售與手作分裝</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="grid2">
+      <section class="section">
+        <h2>核心賣點</h2>
+        <div class="highlight-grid">
+          <div class="card"><strong>100cc 容量</strong><br>適合果醬、辣椒醬、XO 醬、干貝醬與各式醬料分裝使用。</div>
+          <div class="card"><strong>六角瓶型</strong><br>辨識度高，陳列整齊時更有一致性。</div>
+          <div class="card"><strong>附蓋出貨</strong><br>可依需求選擇黑蓋、金蓋或綠蓋。</div>
+          <div class="card"><strong>適合販售與手作</strong><br>適用於內容型商品分裝、手作販售與小禮搭配。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>商品規格</h2>
+        <table>
+          <tr><th>商品名稱</th><td>100六角瓶</td></tr>
+          <tr><th>貨號</th><td>RP-28</td></tr>
+          <tr><th>販售單位</th><td>一箱 50 支</td></tr>
+          <tr><th>售價</th><td>NT$499</td></tr>
+          <tr><th>運費</th><td>外加</td></tr>
+          <tr><th>內容量</th><td>約 100cc</td></tr>
+          <tr><th>全滿量</th><td>約 110cc</td></tr>
+          <tr><th>尺寸</th><td>約 5.8 × 5.1 × 7.8 cm</td></tr>
+          <tr><th>含蓋重量</th><td>約 117g</td></tr>
+          <tr><th>不含蓋重量</th><td>約 110g</td></tr>
+          <tr><th>附件</th><td>附蓋</td></tr>
+          <tr><th>瓶蓋選項</th><td>黑蓋 / 金蓋 / 綠蓋</td></tr>
+        </table>
+      </section>
+    </div>
+
+    <section class="section" style="margin-top:24px">
+      <h2>商品介紹</h2>
+      <p>100六角瓶是一款適合小容量分裝使用的玻璃瓶器，常用於果醬、辣椒醬、XO醬、干貝醬與其他醬料類內容物盛裝。六角瓶型不只方便辨識，也讓整體陳列更整齊俐落，無論是自用、販售、手作分裝或送禮搭配，都有很高的實用性。</p>
+      <p>對需要小容量包裝的人來說，容器不只是裝填工具，也會影響商品呈現與使用便利。100六角瓶具備清楚的瓶型輪廓與穩定的容量設定，適合用來做小份量產品包裝、手工醬料分裝，或作為品牌商品的入門規格瓶器。</p>
+      <p>本商品附蓋出貨，並可依需求選擇不同瓶蓋顏色，讓整體包裝更符合產品風格與品牌感。</p>
+    </section>
+
+    <section class="section" style="margin-top:24px">
+      <h2>適合這些分裝與包裝用途</h2>
+      <div class="scene-grid">
+        <div class="card"><strong>果醬分裝</strong><br>適合草莓果醬、柑橘果醬與各式手作抹醬的小容量盛裝。</div>
+        <div class="card"><strong>醬料包裝</strong><br>適合辣椒醬、XO 醬、干貝醬等內容型商品的分裝與販售。</div>
+        <div class="card"><strong>手作販售</strong><br>適合作為小批量手作商品的包裝瓶器，整體呈現更整齊。</div>
+        <div class="card"><strong>送禮搭配</strong><br>可搭配標籤、封口貼與包裝盒，作為小禮盒分裝容器。</div>
+      </div>
+    </section>
+
+    <section class="section" style="margin-top:24px">
+      <h2>商品圖片補充</h2>
+      <p class="note">以下圖片直接取自玻璃小店資料夾，作為商品頁第三版預覽用素材。</p>
+      <div class="gallery-grid">
+        <div><img class="subimg" src="assets/100六角瓶/main.jpg" alt="100六角瓶補充主圖"><div class="note">補充主圖</div></div>
+        <div><img class="subimg" src="assets/100六角瓶/black.jpg" alt="100六角瓶黑蓋細節"><div class="note">黑蓋細節</div></div>
+        <div><img class="subimg" src="assets/100六角瓶/detail.jpg" alt="100六角瓶瓶身角度"><div class="note">瓶身角度</div></div>
+        <div><img class="subimg" src="assets/100六角瓶/gold.jpg" alt="100六角瓶金蓋角度"><div class="note">金蓋版本</div></div>
+      </div>
+    </section>
+
+    <div class="grid2">
+      <section class="section support" style="margin-top:24px">
+        <h2>常見問題</h2>
+        <details open><summary>100六角瓶是怎麼販售？</summary><p>本商品以一箱 50 支販售。</p></details>
+        <details><summary>商品是否附蓋？</summary><p>有，附蓋出貨。</p></details>
+        <details><summary>瓶蓋可以選擇嗎？</summary><p>可以，目前瓶蓋選項依顏色分類，可依需求選擇黑蓋、金蓋或綠蓋。</p></details>
+        <details><summary>適合裝什麼內容物？</summary><p>適合果醬、辣椒醬、XO 醬、干貝醬與其他小份量醬料分裝使用。</p></details>
+        <details><summary>商品價格是否包含運費？</summary><p>不含，運費外加。</p></details>
+      </section>
+
+      <section class="section support" style="margin-top:24px">
+        <h2>購買前請先了解</h2>
+        <ul>
+          <li>本商品售價為 NT$499 / 一箱 50 支</li>
+          <li>商品價格不含運費，運費另計</li>
+          <li>商品附蓋出貨，瓶蓋可依顏色選擇</li>
+          <li>若有大量採購、搭配需求或瓶蓋選擇問題，可先透過 LINE 詢問</li>
+          <li>實際出貨與配送規則請以配送說明頁為準</li>
+        </ul>
+        <div class="mini-card" style="margin-top:18px">
+          <strong>想確認蓋色或搭配方式？</strong>
+          <p style="margin:8px 0 14px">如果你想確認黑蓋、金蓋、綠蓋的搭配差異，或想詢問其他瓶器一起搭配，歡迎加入 LINE 官方帳號與我們聯繫。</p>
+          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">詢問</a>
+        </div>
+        <div class="mini-card" style="margin-top:18px;background:#fffaf6">
+          <strong>第三版微調</strong>
+          <p style="margin:8px 0 0">本版已補上頁首、頁尾、真實圖片、LINE 連結與更完整的商品圖片區，接下來可繼續補更多情境圖與站內導覽。</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="site-footer" style="margin-top:32px;background:#3a2d25;color:#f5eee7">
+    <div class="wrap" style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px;padding-top:24px;padding-bottom:24px">
+      <div>
+        <div class="footer-title" style="font-size:20px;font-weight:800;margin-bottom:6px">玻璃小店</div>
+        <p class="footer-copy" style="margin:0;color:#dacfc4">提供玻璃瓶器、收納容器與包裝搭配，協助你找到更適合的瓶器選擇。</p>
+      </div>
+      <div>
+        <div class="footer-col-title" style="font-weight:700;margin-bottom:8px">購物資訊</div>
+        <div><a href="#" style="color:#f5eee7;text-decoration:none">購物說明</a></div>
+        <div><a href="#" style="color:#f5eee7;text-decoration:none">配送說明</a></div>
+        <div><a href="#" style="color:#f5eee7;text-decoration:none">常見問題 FAQ</a></div>
+      </div>
+      <div>
+        <div class="footer-col-title" style="font-weight:700;margin-bottom:8px">客服與導購</div>
+        <div><a href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url" style="color:#f5eee7;text-decoration:none">LINE 官方帳號</a></div>
+        <div class="footer-muted" style="color:#dacfc4;margin-top:8px">商品價格不含運費，運費另計。</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const gallery = document.getElementById('product-gallery');
+      if(!gallery) return;
+      const track = gallery.querySelector('.gallery-track');
+      const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
+      const dots = Array.from(gallery.querySelectorAll('.gallery-dot'));
+      const thumbs = Array.from(document.querySelectorAll('.thumb[data-slide]'));
+      let index = 0;
+      let startX = 0;
+      let deltaX = 0;
+      let dragging = false;
+
+      function render(){
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot,i)=>dot.classList.toggle('active', i===index));
+        thumbs.forEach((thumb,i)=>{
+          thumb.style.borderColor = i===index ? '#06c755' : 'var(--line)';
+          thumb.style.boxShadow = i===index ? '0 0 0 2px rgba(6,199,85,.12) inset' : 'none';
+        });
+      }
+
+      function goTo(next){
+        index = Math.max(0, Math.min(next, slides.length - 1));
+        render();
+      }
+
+      thumbs.forEach((thumb)=>{
+        thumb.style.cursor = 'pointer';
+        thumb.addEventListener('click', ()=> goTo(Number(thumb.dataset.slide || 0)));
+      });
+
+      dots.forEach((dot,i)=> dot.addEventListener('click', ()=> goTo(i)));
+
+      gallery.addEventListener('touchstart', (e)=>{
+        startX = e.touches[0].clientX;
+        deltaX = 0;
+        dragging = true;
+      }, {passive:true});
+
+      gallery.addEventListener('touchmove', (e)=>{
+        if(!dragging) return;
+        deltaX = e.touches[0].clientX - startX;
+      }, {passive:true});
+
+      gallery.addEventListener('touchend', ()=>{
+        if(!dragging) return;
+        if(deltaX < -40) goTo(index + 1);
+        else if(deltaX > 40) goTo(index - 1);
+        dragging = false;
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
