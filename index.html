@@ -3,129 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>100六角瓶｜商品資訊頁範本</title>
+  <title>100cc 六角瓶｜商品資訊</title>
   <style>
-    :root{
-      --bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--brand2:#a98a72;--linegreen:#06c755;
-    }
+    :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--linegreen:#06c755}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-    .wrap{max-width:1180px;margin:0 auto;padding:24px}
-    .topbar{background:#efe7df;color:#6a5647;font-size:12px;border-bottom:1px solid var(--line)}
-    .topbar .wrap{padding-top:10px;padding-bottom:10px}
-    .site-header{background:rgba(247,245,242,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 24px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#3f332b}
-    .brand img{width:32px;height:32px;border-radius:8px}
-    .nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
-    .nav a{text-decoration:none;color:#4d4036}
-    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:start;margin-top:24px}
-    .gallery,.panel,.section{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-    .panel,.section{padding:24px}
-    .gallery-main{position:relative;overflow:hidden;background:#eee}
-    .gallery-track{display:flex;transition:transform .28s ease;touch-action:pan-y}
-    .gallery-slide{min-width:100%;user-select:none}
-    .mainimg{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eee;display:block}
-    .gallery-count{position:absolute;right:12px;bottom:12px;background:rgba(34,34,34,.62);color:#fff;padding:5px 9px;border-radius:999px;font-size:12px;z-index:2}
+    .wrap{max-width:1080px;margin:0 auto;padding:20px}
+    .header{padding:16px 0 8px}
+    .brand{display:flex;align-items:center;gap:10px;color:#3f332b;font-weight:800}
+    .brand img{width:34px;height:34px;border-radius:8px}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .panel{padding:24px}
+    .gallery-main{position:relative;background:#eee}
+    .gallery-track{display:flex;transition:transform .28s ease}
+    .gallery-slide{min-width:100%}
+    .mainimg{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+    .gallery-count{position:absolute;right:12px;bottom:12px;background:rgba(34,34,34,.62);color:#fff;padding:5px 9px;border-radius:999px;font-size:12px}
     .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:12px}
     .thumb{border:1px solid var(--line);border-radius:12px;padding:6px;background:#faf8f5;text-align:center;font-size:12px;color:var(--muted);cursor:pointer}
     .thumb.active{border-color:#b08e73;box-shadow:0 0 0 2px rgba(169,138,114,.12) inset}
-    .subimg{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff}
+    .subimg{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#fff}
     .eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:12px}
-    h1{font-size:34px;line-height:1.2;margin:0 0 12px;color:#2f251f}
-    h2{font-size:24px;line-height:1.25;margin:0 0 16px;color:#342922}
-    .subtitle{font-size:16px;color:#5b4a3e;margin:0 0 18px}
+    h1{font-size:32px;line-height:1.2;margin:0 0 10px;color:#2f251f}
+    h2{font-size:22px;line-height:1.25;margin:0 0 14px;color:#342922}
+    .subtitle{font-size:15px;color:#5b4a3e;margin:0 0 16px}
     .price-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
     .price-lg{font-size:32px;font-weight:800;color:var(--brand)}
     .price-unit{font-size:16px;color:var(--muted)}
-    .price-sub{margin-top:4px;font-size:13px;color:#8a7767;font-weight:700}
-    .usp-strip{display:flex;flex-direction:column;gap:8px;margin:0 0 18px;padding:14px;background:#fbf7f2;border:1px solid var(--line);border-radius:12px}
-    .usp-item{display:flex;align-items:center;gap:8px;font-size:14px;color:#5b4a3e;font-weight:600}
-    .option-row{display:flex;flex-direction:column;gap:10px;margin:0 0 18px}
-    .option-label{font-size:13px;color:#7b6c61;font-weight:700}
-    .cap-chips{display:flex;gap:8px;flex-wrap:wrap}
-    .cap-chip{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px;color:#5d4a3d;font-weight:700}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .price-sub{margin-top:6px;font-size:14px;color:#6f5b4b}
+    .info-strip{display:grid;gap:8px;margin:18px 0;padding:14px;background:#fbf7f2;border:1px solid var(--line);border-radius:12px}
+    .info-item{font-size:14px;color:#4d4036;font-weight:600}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+    .chip{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px;font-weight:700;color:#5d4a3d}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid transparent}
     .btn.line{background:var(--linegreen);color:#fff}
     .btn.ghost{background:#fff;border-color:var(--line);color:#4d4036}
-    .cta-note{font-size:12px;color:#8a7767;margin:12px 0 0}
-    .category-strip{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .category-item{display:inline-flex;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);text-decoration:none;color:#5d4a3d;font-size:13px;font-weight:700}
-    .template-banner{background:#f7efe6;border:1px solid #e7d7c6;border-radius:16px;padding:18px 20px;margin-top:24px}
-    .template-banner strong{display:block;color:#765d48;margin-bottom:6px}
-    .template-banner p{margin:0;color:#6c5645;font-size:14px}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:22px}
+    .quick-notes{display:grid;gap:10px}
+    .quick-note{padding:14px 16px;background:#fcfbf9;border:1px solid var(--line);border-radius:14px;font-size:14px;color:#43362d}
+    .quick-note strong{display:block;margin-bottom:4px}
     table{width:100%;border-collapse:collapse}
     th,td{padding:12px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
-    th{width:110px;color:#6b5849;font-weight:800}
+    th{width:120px;color:#6b5849;font-weight:800}
     td{color:#41362f}
-    .info-list{display:grid;gap:12px}
-    .info-item{padding:14px 16px;background:#fcfbf9;border:1px solid var(--line);border-radius:14px}
-    .info-item strong{display:block;margin-bottom:4px;color:#43362d}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+    .step{background:#fff;border:1px solid #eadbcb;border-radius:14px;padding:14px}
+    .step-no{font-size:12px;font-weight:800;color:#9a7d63;margin-bottom:6px}
+    .message-box{margin-top:14px;padding:16px;border-radius:14px;background:#fff;border:1px solid #eadbcb}
+    .message-box pre{margin:8px 0 0;white-space:pre-wrap;font-family:inherit;font-size:14px;line-height:1.7;color:#4b3d33}
     .faq details{border-top:1px solid var(--line);padding:14px 0}
     .faq details:first-of-type{border-top:none;padding-top:0}
     .faq summary{cursor:pointer;font-weight:800;color:#41342c}
     .faq p{margin:10px 0 0;color:#5c4b3f;font-size:14px}
-    .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .note{font-size:13px;color:#7b6c61}
-    .contact-box{background:#fdf9f4;border-color:#e8d8c8}
-    .contact-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-    .step{background:#fff;border:1px solid #eadbcb;border-radius:14px;padding:14px}
-    .step-no{font-size:12px;font-weight:800;color:#9a7d63;margin-bottom:6px}
-    .message-box{margin-top:16px;padding:16px;border-radius:14px;background:#fff;border:1px solid #eadbcb}
-    .message-box pre{margin:8px 0 0;white-space:pre-wrap;font-family:inherit;font-size:14px;line-height:1.7;color:#4b3d33}
-    .sticky-buybar{position:sticky;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 14px;display:flex;justify-content:center}
-    .sticky-inner{width:min(1180px,100%);display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .sticky-buybar{position:sticky;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px;display:flex;justify-content:center;margin-top:20px}
+    .sticky-inner{width:min(1080px,100%);display:flex;align-items:center;justify-content:space-between;gap:14px}
     .sticky-meta{display:flex;flex-direction:column;font-size:13px;color:#5f4e42}
-    .site-footer{margin-top:32px;background:#3a2d25;color:#f5eee7}
-    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px;padding-top:24px;padding-bottom:24px}
-    .footer-grid a{color:#f5eee7;text-decoration:none}
-    .footer-muted{color:#dacfc4}
+    .footer{padding:26px 0 34px;color:#7a695d;font-size:13px;text-align:center}
     @media (max-width: 900px){
-      .hero,.grid2,.footer-grid,.contact-steps{grid-template-columns:1fr}
-      .photo-grid{grid-template-columns:repeat(2,1fr)}
-      .header-inner{padding-left:16px;padding-right:16px}
+      .hero,.steps{grid-template-columns:1fr}
       .wrap{padding:16px}
       h1{font-size:28px}
-      h2{font-size:22px}
-      .thumbs{grid-template-columns:repeat(5, minmax(64px,1fr));overflow:auto}
+      .thumbs{grid-template-columns:repeat(5,minmax(64px,1fr));overflow:auto}
+      .sticky-inner{align-items:flex-start;flex-direction:column}
+      .sticky-inner .btn{width:100%}
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="wrap">先提供客戶看的商品資訊頁範本｜重點是讓對方快速了解商品、規格、購買方式</div>
-  </div>
-
-  <header class="site-header">
-    <div class="header-inner wrap" style="padding-top:14px;padding-bottom:14px">
+  <div class="wrap">
+    <div class="header">
       <div class="brand">
         <img src="assets/common/logo.png" alt="玻璃小店 logo">
         <span>玻璃小店</span>
       </div>
-      <nav class="nav">
-        <a href="#overview">商品資訊</a>
-        <a href="#specs">規格</a>
-        <a href="#buying-guide">購買方式</a>
-        <a href="#faq-block">常見問題</a>
-      </nav>
-    </div>
-  </header>
-
-  <div class="wrap">
-    <div class="category-strip">
-      <span class="category-item">商品資訊</span>
-      <span class="category-item">規格說明</span>
-      <span class="category-item">詢價方式</span>
     </div>
 
-    <div class="hero" id="overview">
-      <section class="gallery">
-        <div class="gallery-main" id="product-gallery">
+    <div class="hero">
+      <section class="card">
+        <div class="gallery-main">
           <div class="gallery-track">
-            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/main.jpg" alt="100六角瓶主圖"></div>
+            <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/main.jpg" alt="100cc 六角瓶主圖"></div>
             <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/black.jpg" alt="黑蓋版本"></div>
             <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/gold.jpg" alt="金蓋版本"></div>
             <div class="gallery-slide"><img class="mainimg" src="assets/100六角瓶/green.jpg" alt="綠蓋版本"></div>
@@ -142,201 +101,138 @@
         </div>
       </section>
 
-      <section class="panel">
-        <div class="eyebrow">100cc 六角瓶</div>
-        <h1>100cc 六角瓶｜商品資訊</h1>
-        <p class="subtitle">此頁整理商品規格、價格、起訂量、瓶蓋選項與詢價方式，方便您先快速了解後再進一步詢問。</p>
+      <section class="card panel">
+        <div class="eyebrow">商品資訊</div>
+        <h1>100cc 六角瓶</h1>
+        <p class="subtitle">適合蜂蜜、果醬、醬料等分裝使用。此款含蓋出貨，提供黑蓋、金蓋、綠蓋可選。</p>
 
         <div class="price-main">
           <span class="price-lg">NT$499</span>
           <span class="price-unit">/ 箱（50支）</span>
         </div>
-        <div class="price-sub">自取價｜平均 NT$9.98 / 支｜配送另計運費</div>
+        <div class="price-sub">自取價，含蓋出貨，配送另計運費</div>
 
-        <div class="usp-strip">
-          <div class="usp-item">📦 1 箱 50 支，方便少量採購</div>
-          <div class="usp-item">✅ 含蓋出貨，可選不同蓋色</div>
-          <div class="usp-item">🚚 台灣現貨，實際出貨時間以下單確認為準</div>
+        <div class="info-strip">
+          <div class="info-item">1 箱 50 支，恕不散買</div>
+          <div class="info-item">平均約 NT$9.98 / 支</div>
+          <div class="info-item">現貨供應中，實際出貨日依當下庫存與訂單順序確認</div>
         </div>
 
-        <div class="option-row">
-          <span class="option-label">此款可選瓶蓋</span>
-          <div class="cap-chips">
-            <span class="cap-chip">黑蓋</span>
-            <span class="cap-chip">金蓋</span>
-            <span class="cap-chip">綠蓋</span>
-          </div>
+        <div class="chips">
+          <span class="chip">黑蓋</span>
+          <span class="chip">金蓋</span>
+          <span class="chip">綠蓋</span>
         </div>
 
         <div class="cta-row">
           <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
-          <a class="btn ghost" href="#buying-guide">看購買方式</a>
-        </div>
-        <p class="cta-note">若您想確認運費、庫存或其他搭配需求，歡迎直接透過 LINE 詢問。</p>
-      </section>
-    </div>
-
-    <div class="template-banner">
-      <strong>先看基本資訊，再確認細節</strong>
-      <p>如果您想了解是否適合您的使用需求，或需要確認大量採購、混搭與配送方式，都可以透過 LINE 進一步詢問。</p>
-    </div>
-
-    <div class="grid2">
-      <section class="section" id="specs">
-        <h2>商品規格</h2>
-        <table>
-          <tr><th>商品名稱</th><td>100cc 六角瓶</td></tr>
-          <tr><th>容量</th><td>約 100cc（全滿約 110cc）</td></tr>
-          <tr><th>尺寸</th><td>約 5.8 × 5.1 × 7.8 cm</td></tr>
-          <tr><th>含蓋重量</th><td>約 117g / 支</td></tr>
-          <tr><th>瓶口</th><td>寬口設計，方便填裝與清洗</td></tr>
-          <tr><th>瓶身材質</th><td>玻璃</td></tr>
-          <tr><th>瓶蓋</th><td>黑 / 金 / 綠（三色可選）</td></tr>
-          <tr><th>包裝單位</th><td>1 箱 = 50 支</td></tr>
-          <tr><th>售價</th><td>NT$499 / 箱（自取價）</td></tr>
-          <tr><th>備註</th><td>若需大量採購、混搭或特殊使用需求，建議先詢問確認。</td></tr>
-        </table>
-      </section>
-
-      <section class="section">
-        <h2>購買前可先確認</h2>
-        <div class="info-list">
-          <div class="info-item">
-            <strong>商品規格</strong>
-            可先確認容量、尺寸、重量、瓶口與材質是否符合需求。
-          </div>
-          <div class="info-item">
-            <strong>包裝與售價</strong>
-            可先了解箱入數、價格與是否含蓋。
-          </div>
-          <div class="info-item">
-            <strong>配送方式</strong>
-            若需配送，可提供數量與地區協助估算運費。
-          </div>
-          <div class="info-item">
-            <strong>其他需求</strong>
-            若需混搭、大量採購或特殊用途，也可先提出一併確認。
-          </div>
+          <a class="btn ghost" href="#specs">看規格</a>
         </div>
       </section>
     </div>
 
-    <section class="section" style="margin-top:24px">
-      <h2>購買與詢價說明</h2>
-      <div class="info-list">
-        <div class="info-item"><strong>價格說明</strong>本頁標示為自取價；若需配送，將依件數與地區另外計算運費。</div>
-        <div class="info-item"><strong>詢價內容</strong>建議提供瓶款、蓋色、數量與配送地區，方便快速回覆。</div>
-        <div class="info-item"><strong>出貨提醒</strong>玻璃商品會妥善包裝出貨；若收到破損，請於收到後 3 天內拍照回傳協助處理。</div>
+    <section class="section">
+      <h2>購買前請先確認</h2>
+      <div class="quick-notes">
+        <div class="quick-note"><strong>價格說明</strong>本頁標示為自取價，配送運費另計。</div>
+        <div class="quick-note"><strong>購買單位</strong>最小購買單位為 1 箱 50 支，恕不散買。</div>
+        <div class="quick-note"><strong>混搭說明</strong>是否可混搭不同蓋色或其他瓶款，需依箱規與當下庫存確認。</div>
+        <div class="quick-note"><strong>出貨提醒</strong>實際庫存與出貨時間以下單前確認為準；若收到破損，請於 3 天內拍照回傳。</div>
       </div>
     </section>
 
-    <section class="section contact-box" id="buying-guide" style="margin-top:24px">
-      <h2>怎麼詢價 / 下單</h2>
-      <p style="color:#5b4a3e;font-size:15px;margin:0">這一段才是資訊頁最重要的地方。客人看完後，要知道下一步怎麼問，不要再從零開始來回確認。</p>
+    <section class="section" id="specs">
+      <h2>商品規格</h2>
+      <table>
+        <tr><th>商品名稱</th><td>100cc 六角瓶</td></tr>
+        <tr><th>容量</th><td>建議裝填約 100cc，裝滿約 110cc</td></tr>
+        <tr><th>尺寸</th><td>約 5.8 × 5.1 × 7.8 cm</td></tr>
+        <tr><th>含蓋重量</th><td>約 117g / 支</td></tr>
+        <tr><th>材質</th><td>玻璃</td></tr>
+        <tr><th>瓶口</th><td>寬口設計，適合一般蜂蜜、果醬、醬料填裝</td></tr>
+        <tr><th>瓶蓋</th><td>黑蓋 / 金蓋 / 綠蓋</td></tr>
+        <tr><th>包裝單位</th><td>1 箱 = 50 支</td></tr>
+        <tr><th>售價</th><td>NT$499 / 箱（自取價，含蓋，未含運）</td></tr>
+        <tr><th>備註</th><td>大量採購或混搭需求請先詢問。</td></tr>
+      </table>
+    </section>
 
-      <div class="contact-steps">
+    <section class="section">
+      <h2>怎麼詢價 / 下單</h2>
+      <p style="margin:0;color:#5b4a3e;font-size:15px">如需詢價，請直接提供以下資訊，我們可更快回覆商品金額、運費與出貨時間。</p>
+      <div class="steps">
         <div class="step">
           <div class="step-no">STEP 1</div>
-          <strong>提供商品需求</strong>
-          <div class="note">告知瓶款、蓋色、數量。</div>
+          <strong>提供需求</strong>
+          <div>告知瓶蓋顏色與數量。</div>
         </div>
         <div class="step">
           <div class="step-no">STEP 2</div>
-          <strong>提供配送資訊</strong>
-          <div class="note">告知收件地區，方便估運費與出貨方式。</div>
+          <strong>提供取貨方式</strong>
+          <div>告知自取或配送；如配送請提供地區。</div>
         </div>
         <div class="step">
           <div class="step-no">STEP 3</div>
-          <strong>確認報價後安排出貨</strong>
-          <div class="note">你回覆商品金額、運費、出貨時間後即可確認。</div>
+          <strong>確認後下單</strong>
+          <div>確認商品金額、運費與出貨時間後即可安排。</div>
         </div>
       </div>
-
       <div class="message-box">
-        <strong>客人可直接複製這段詢價</strong>
+        <strong>可直接複製以下內容詢價</strong>
         <pre>我想詢問 100cc 六角瓶
 瓶蓋顏色：黑 / 金 / 綠
 數量：___ 箱
+配送方式：自取 / 配送
 配送地區：___
 其他需求：___</pre>
       </div>
-
-      <div class="cta-row" style="margin-top:16px">
+      <div class="cta-row">
         <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">傳 LINE 詢價</a>
       </div>
     </section>
 
-    <div class="grid2">
-      <section class="section faq" id="faq-block">
-        <h2>常見問題</h2>
-        <details open>
-          <summary>運費怎麼算？</summary>
-          <p>頁面標示的 NT$499 為自取價。若需配送，會依箱數、配送地區與配送方式另外計算運費；可先透過 LINE 提供數量與地區，我們再回覆實際金額。</p>
-        </details>
-        <details>
-          <summary>商品有含蓋嗎？</summary>
-          <p>此款為含蓋出貨，瓶蓋顏色可選。若需確認其他搭配方式，可先詢問。</p>
-        </details>
-        <details>
-          <summary>可以混搭不同顏色或其他瓶款嗎？</summary>
-          <p>可先詢問。混搭方式會依箱規、庫存與包裝安排而定，建議先提供需求協助確認。</p>
-        </details>
-        <details>
-          <summary>需要一次買很多嗎？</summary>
-          <p>不一定，依商品頁標示的最小包裝單位為主。此款目前以 1 箱 50 支為基本單位。</p>
-        </details>
-        <details>
-          <summary>收到商品破損怎麼辦？</summary>
-          <p>請在收到商品後 3 天內提供照片與訂單資訊，我們會協助處理。商品會依實際出貨需求妥善包裝。</p>
-        </details>
-        <details>
-          <summary>所有瓶款都適合同樣寫法嗎？</summary>
-          <p>不同瓶款的容量、瓶口、箱入數與搭配方式都可能不同，實際仍以各商品頁標示內容為準。</p>
-        </details>
-      </section>
+    <section class="section faq">
+      <h2>常見問題</h2>
+      <details open>
+        <summary>價格有含運嗎？</summary>
+        <p>本頁 NT$499 為自取價，配送運費另計。</p>
+      </details>
+      <details>
+        <summary>商品有含蓋嗎？</summary>
+        <p>有，為含蓋出貨，可選黑蓋、金蓋、綠蓋。</p>
+      </details>
+      <details>
+        <summary>最少要買多少？可以散買嗎？</summary>
+        <p>最小購買單位為 1 箱 50 支，恕不散買。</p>
+      </details>
+      <details>
+        <summary>可以混搭不同蓋色或其他瓶款嗎？</summary>
+        <p>需依箱規與當下庫存確認，建議先提供需求詢問。</p>
+      </details>
+      <details>
+        <summary>有現貨嗎？多久出貨？</summary>
+        <p>現貨供應中，實際出貨日依當下庫存與訂單順序確認。</p>
+      </details>
+      <details>
+        <summary>收到破損怎麼處理？</summary>
+        <p>請於收到商品後 3 天內提供照片與訂單資訊，我們會協助處理。</p>
+      </details>
+    </section>
 
-      <section class="section">
-        <h2>商品實拍</h2>
-        <p class="note">圖片為實際拍攝，顏色以實品為準。</p>
-        <div class="photo-grid">
-          <div><img class="subimg" src="assets/100六角瓶/main.jpg" alt="主圖"><div class="note">主圖</div></div>
-          <div><img class="subimg" src="assets/100六角瓶/black.jpg" alt="黑蓋版本"><div class="note">黑蓋版本</div></div>
-          <div><img class="subimg" src="assets/100六角瓶/detail.jpg" alt="瓶身角度"><div class="note">瓶身角度</div></div>
-          <div><img class="subimg" src="assets/100六角瓶/gold.jpg" alt="金蓋版本"><div class="note">金蓋版本</div></div>
+    <div class="sticky-buybar">
+      <div class="sticky-inner">
+        <div class="sticky-meta">
+          <strong>100cc 六角瓶｜NT$499 / 箱（50支）</strong>
+          <span>自取價，含蓋出貨，配送另計運費</span>
         </div>
-      </section>
+        <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      玻璃小店｜頁面標示價格為自取價，配送運費另計，實際庫存與出貨時間以下單前確認為準。
     </div>
   </div>
-
-  <div class="sticky-buybar">
-    <div class="sticky-inner">
-      <div class="sticky-meta">
-        <strong>100cc 六角瓶｜NT$499 / 箱（自取價）</strong>
-        <span>配送另計運費｜可先確認規格與詢價方式</span>
-      </div>
-      <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:6px">玻璃小店</div>
-        <p class="footer-muted" style="margin:0">先提供基本資訊，方便您快速了解商品後再進一步詢價。</p>
-      </div>
-      <div>
-        <div style="font-weight:700;margin-bottom:8px">頁面重點</div>
-        <div><a href="#specs">商品規格</a></div>
-        <div><a href="#buying-guide">購買方式</a></div>
-        <div><a href="#faq-block">常見問題</a></div>
-      </div>
-      <div>
-        <div style="font-weight:700;margin-bottom:8px">聯絡方式</div>
-        <div><a href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 官方帳號</a></div>
-        <div class="footer-muted" style="margin-top:8px">頁面標示價格為自取價；若需配送，運費另計。實際庫存與出貨日以下單前確認為準。</div>
-      </div>
-    </div>
-  </footer>
 
   <script>
     (function(){
