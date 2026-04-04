@@ -1,7 +1,12 @@
 [
   {
     "category": "寬口瓶",
-    "count": 2,
+    "count": 18,
     "slug": "寬口瓶"
+  },
+  {
+    "category": "窄口瓶",
+    "count": 21,
+    "slug": "窄口瓶"
   }
 ]
