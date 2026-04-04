@@ -9,7 +9,7 @@
     body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7f5f2;color:#222;line-height:1.65}
     :root{--green:#06c755;--dark:#2f251f;--muted:#6b5849;--line:#e7e0d7;--card:#fff;--warm:#6f5b4b}
     .site-header{background:var(--card);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:100}
-    .site-header__inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px;flex-wrap:wrap}
+    .site-header__inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
     .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);font-size:18px;font-weight:800;flex-shrink:0}
     .site-logo img{width:34px;height:34px;border-radius:8px;display:block}
     .site-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -75,6 +75,7 @@
     .site-footer a{color:var(--muted);text-decoration:none}
     .site-footer a:hover{text-decoration:underline}
     @media(max-width:900px){.product-layout,.steps{grid-template-columns:1fr}.thumbs{grid-template-columns:repeat(5,minmax(64px,1fr));overflow:auto}.sticky-inner{flex-direction:column;align-items:flex-start}.sticky-inner .btn{width:100%}}}
+    @media(max-width:600px){.site-header__inner{padding:10px 16px}.site-nav{gap:6px;flex-wrap:nowrap}.site-nav a{padding:7px 10px;font-size:13px}.site-logo{font-size:16px}.site-logo img{width:28px;height:28px}}
   </style>
 </head>
 <body>
