@@ -3,134 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>玻璃小店｜玻璃容器商品與詢價入口</title>
+  <title>玻璃小店｜商品分類入口</title>
   <style>
     :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--linegreen:#06c755}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-    .wrap{max-width:1080px;margin:0 auto;padding:20px}
-    .header{padding:16px 0 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:10px;color:#3f332b;font-weight:800;text-decoration:none}
-    .brand img{width:34px;height:34px;border-radius:8px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid transparent}
-    .btn.line{background:var(--linegreen);color:#fff}
-    .btn.ghost{background:#fff;border-color:var(--line);color:#4d4036}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:stretch}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-    .panel{padding:28px}
-    .eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:14px}
-    h1{font-size:38px;line-height:1.15;margin:0 0 12px;color:#2f251f}
-    h2{font-size:24px;line-height:1.2;margin:0 0 14px;color:#342922}
-    .lead{font-size:16px;color:#5b4a3e;margin:0 0 18px}
-    .hero-points,.quick-list,.faq-list{display:grid;gap:10px}
-    .hero-point,.quick-item,.faq-item,.product-card{padding:14px 16px;background:#fcfbf9;border:1px solid var(--line);border-radius:14px}
-    .hero-point strong,.quick-item strong,.faq-item strong{display:block;margin-bottom:4px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .section{margin-top:24px}
-    .product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .product-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#fff;margin-bottom:12px}
-    .price{font-size:28px;font-weight:800;color:var(--brand)}
-    .price-sub{font-size:14px;color:#6f5b4b;margin-top:4px}
-    .footer{padding:26px 0 34px;color:#7a695d;font-size:13px;text-align:center}
-    @media (max-width: 900px){
-      .hero,.product-grid{grid-template-columns:1fr}
-      .wrap{padding:16px}
-      h1{font-size:30px}
-    }
+    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .wrap{max-width:1080px;margin:0 auto;padding:20px}.header{padding:16px 0 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;color:#3f332b;font-weight:800;text-decoration:none}.brand img{width:34px;height:34px;border-radius:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid transparent}.btn.line{background:var(--linegreen);color:#fff}.btn.ghost{background:#fff;border-color:var(--line);color:#4d4036}
+    .card,.hero,.cat-card,.product-card{background:#fff;border:1px solid var(--line);border-radius:18px}.hero{padding:28px;margin-bottom:24px}.cat-grid,.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}.cat-card,.product-card{padding:18px}.product-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--line);margin-bottom:12px}.price{font-size:24px;font-weight:800;color:var(--brand)}.muted{color:#6b5849}.section{margin-top:24px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="header">
-      <a class="brand" href="/glassflowlab-site-preview/">
-        <img src="assets/common/logo.png" alt="玻璃小店 logo">
-        <span>玻璃小店</span>
-      </a>
-      <div class="cta-row" style="margin-top:0">
-        <a class="btn ghost" href="products.html">查看商品列表</a>
-        <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
-      </div>
+      <a class="brand" href="/glassflowlab-site-preview/"><img src="assets/common/logo.png" alt="玻璃小店 logo"><span>玻璃小店</span></a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn ghost" href="products.html">全部商品</a><a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a></div>
     </div>
-
-    <div class="hero">
-      <section class="card panel">
-        <div class="eyebrow">玻璃容器詢價入口</div>
-        <h1>玻璃瓶、玻璃罐、包材容器，先看商品，再快速詢價</h1>
-        <p class="lead">這裡先整理目前可直接查看的商品頁與基本規格。價格為自取價，配送運費另計；實際庫存、出貨日與混搭方式，以下單前確認為準。</p>
-        <div class="hero-points">
-          <div class="hero-point"><strong>先看商品頁</strong>每個商品頁都可直接看到價格、箱入數、尺寸、重量與詢價方式。</div>
-          <div class="hero-point"><strong>可直接用 LINE 詢價</strong>提供商品名稱、箱數與配送地區，我們可更快回覆。</div>
-          <div class="hero-point"><strong>價格與箱入數已整理</strong>目前已先整理可直接上線的商品，之後會持續擴充。</div>
-        </div>
-        <div class="cta-row">
-          <a class="btn ghost" href="products.html">進入商品列表</a>
-          <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">直接 LINE 詢價</a>
-        </div>
-      </section>
-
-      <section class="card panel">
-        <h2>購買前請先確認</h2>
-        <div class="quick-list">
-          <div class="quick-item"><strong>價格說明</strong>本網站頁面標示價格為自取價，配送運費另計。</div>
-          <div class="quick-item"><strong>購買單位</strong>每個商品以頁面標示之箱入數為準，恕不散買。</div>
-          <div class="quick-item"><strong>混搭與大量採購</strong>若需混搭不同款式、不同蓋色或大量採購，建議先詢問。</div>
-          <div class="quick-item"><strong>出貨提醒</strong>實際庫存與出貨時間以下單前確認為準；若收到破損，請於 3 天內拍照回傳。</div>
-        </div>
-      </section>
-    </div>
-
-    <section class="section">
-      <h2>目前可查看的商品</h2>
-      <div class="product-grid">
-        <article class="product-card">
-          <img src="assets/products/100六角瓶/main.jpg" alt="100六角瓶主圖">
-          <h3 style="margin:0 0 8px">100六角瓶</h3>
-          <div class="price">NT$475</div>
-          <div class="price-sub">/ 箱（50支）</div>
-          <p style="color:#5b4a3e">適合分裝使用，頁面可直接查看規格、FAQ 與詢價方式。</p>
-          <div class="cta-row">
-            <a class="btn ghost" href="products/100六角瓶.html">看商品頁</a>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <img src="assets/products/100四方瓶/main.jpg" alt="100四方瓶主圖">
-          <h3 style="margin:0 0 8px">100四方瓶</h3>
-          <div class="price">NT$1,155</div>
-          <div class="price-sub">/ 箱（105支）</div>
-          <p style="color:#5b4a3e">目前已可直接查看商品頁，後續會持續補齊更多商品。</p>
-          <div class="cta-row">
-            <a class="btn ghost" href="products/100四方瓶.html">看商品頁</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section card panel">
-      <h2>怎麼詢價 / 下單</h2>
-      <div class="quick-list">
-        <div class="quick-item"><strong>STEP 1</strong>先確認商品頁中的商品名稱、箱數與需求。</div>
-        <div class="quick-item"><strong>STEP 2</strong>提供自取或配送需求；如配送請附上配送地區。</div>
-        <div class="quick-item"><strong>STEP 3</strong>確認商品金額、運費與出貨時間後，再安排下單。</div>
-      </div>
-      <div class="cta-row">
-        <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
-        <a class="btn ghost" href="products.html">打開商品列表</a>
-      </div>
-    </section>
-
-    <section class="section card panel">
-      <h2>常見問題</h2>
-      <div class="faq-list">
-        <div class="faq-item"><strong>價格有含運嗎？</strong>沒有，頁面標示價格為自取價，配送運費另計。</div>
-        <div class="faq-item"><strong>可以散買嗎？</strong>不行，最小購買單位依每個商品頁標示之箱入數為準。</div>
-        <div class="faq-item"><strong>可以混搭不同商品嗎？</strong>需依箱規、庫存與出貨安排確認，建議先詢問。</div>
-      </div>
-    </section>
-
-    <div class="footer">
-      玻璃小店｜商品價格為自取價，配送運費另計，實際庫存與出貨時間以下單前確認為準。
-    </div>
+    <section class="hero"><h1 style="margin:0 0 12px">商品分類</h1><p class="muted" style="margin:0">先選分類，再看商品。後續商品與配件會依 Google Sheet 的產品分類持續擴充。</p></section>
+    <section class="section"><h2>產品分類</h2><div class="cat-grid"><a class="cat-card" href="category/寬口瓶.html" style="text-decoration:none;color:#222"><strong style="display:block;font-size:22px;margin-bottom:8px">寬口瓶</strong><span class="muted">目前 2 項商品</span></a></div></section>
+    <section class="section"><h2>目前可查看商品</h2><div class="product-grid"><article class="product-card"><img src="assets/products/100四方瓶/main.jpg" alt="100四方瓶主圖"><h3 style="margin:0 0 8px">100四方瓶</h3><div class="price">NT$1,155</div><div class="muted">/ 箱（105支）・寬口瓶</div><p><a class="btn ghost" href="products/100四方瓶.html">看商品頁</a></p></article><article class="product-card"><img src="assets/products/100六角瓶/main.jpg" alt="100六角瓶主圖"><h3 style="margin:0 0 8px">100六角瓶</h3><div class="price">NT$475</div><div class="muted">/ 箱（50支）・寬口瓶</div><p><a class="btn ghost" href="products/100六角瓶.html">看商品頁</a></p></article></div></section>
   </div>
 </body>
 </html>
