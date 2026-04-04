@@ -731,20 +731,33 @@
 (function(){
   var btns = document.querySelectorAll('.sidebar-btn');
   var cards = document.querySelectorAll('.product-card');
+
+  function applyFilter(filter){
+    cards.forEach(function(card){
+      if(filter === 'all' || card.getAttribute('data-category') === filter){
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    btns.forEach(function(b){b.classList.remove('active')});
+    btns.forEach(function(b){
+      if(b.getAttribute('data-filter') === filter){
+        b.classList.add('active');
+      }
+    });
+  }
+
   btns.forEach(function(btn){
     btn.addEventListener('click',function(){
-      btns.forEach(function(b){b.classList.remove('active')});
-      btn.classList.add('active');
-      var filter = btn.getAttribute('data-filter');
-      cards.forEach(function(card){
-        if(filter === 'all' || card.getAttribute('data-category') === filter){
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      applyFilter(btn.getAttribute('data-filter'));
     });
   });
+
+  // Read URL param on load to support direct linking from category cards
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('category');
+  if(cat){ applyFilter(cat); }
 })();
 </script>
 </body>
