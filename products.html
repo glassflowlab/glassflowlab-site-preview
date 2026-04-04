@@ -26,20 +26,18 @@
     .sidebar-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:700;border:1px solid var(--line);color:var(--dark);background:#fff;cursor:pointer;transition:all .15s}
     .sidebar-btn:hover{border-color:#b08e73;background:#f6efe8;color:var(--dark)}
     .sidebar-btn.active{border-color:#b08e73;background:#6f5b4b;color:#fff}
-    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-    .product-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+    .product-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:box-shadow .2s}
     .product-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08)}
     .product-card.hidden{display:none}
+    .product-card__full{display:block}
     .product-card__img{display:block;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff}
     .product-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .25s}
-    .product-card__img:hover img{transform:scale(1.04)}
-    .product-card__body{padding:16px;flex:1;display:flex;flex-direction:column}
     .product-card__full:hover .product-card__img img{transform:scale(1.04)}
     .product-card__full:hover .product-card__name{color:#b08e73}
-    .product-card__name{margin:0 0 8px;font-size:20px;color:var(--dark)}
+    .product-card__body{padding:16px}
+    .product-card__name{margin:0 0 8px;font-size:20px;color:var(--dark);transition:color .15s}
     .product-card__price{font-size:24px;font-weight:800;color:#c0392b;margin-bottom:4px}
-        .product-card .btn{display:block;width:100%;text-align:center;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--dark);font-weight:700;text-decoration:none;font-size:14px;transition:all .15s}
-    .product-card .btn:hover{background:#f6efe8;border-color:#b08e73}
     .site-footer{background:#fff;border-top:1px solid var(--line);padding:22px 20px;text-align:center;color:var(--muted);font-size:13px}
     .site-footer a{color:var(--muted);text-decoration:none}
     .site-footer a:hover{text-decoration:underline}
@@ -58,24 +56,12 @@
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="site-logo" href="/glassflowlab-site-preview/">
-      <img src="/glassflowlab-site-preview/assets/common/logo.png" alt="玻璃小店 logo">
-      <span style="text-decoration:none">玻璃小店</span>
-    </a>
-    <nav class="site-nav">
-      <a class="btn-home" href="/glassflowlab-site-preview/">回首頁</a>
-      <a class="btn-home active" href="/glassflowlab-site-preview/products.html">全部商品</a>
-      <a class="btn-line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/glassflowlab-site-preview/"><img src="${BASE}/assets/common/logo.png" alt="玻璃小店 logo"><span style="text-decoration:none">玻璃小店</span></a><nav class="site-nav"><a class="btn-home" href="${BASE}/">回首頁</a><a class="btn-home active" href="${BASE}/products.html">全部商品</a><a class="btn-line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a></nav></div></header>
 <div class="page">
   <div class="page-header">
     <div class="page-header-left">
       <h1>全部商品</h1>
-      <p class="text-muted">點圖片或「看商品頁」皆可進入商品詳情。</p>
+      <p class="text-muted">點圖片或品名皆可進入商品詳情。</p>
     </div>
     <div class="sidebar">
       <button class="sidebar-btn active" data-filter="all">全部商品</button>
@@ -84,623 +70,671 @@
     </div>
   </div>
   <div class="product-grid">
-
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/100四方瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/100四方瓶/main.jpg" alt="100四方瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/100四方瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/100四方瓶/main.jpg" alt="100四方瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">100四方瓶</h3>
+          <div class="product-card__price">$1,155 <span style="font-size:15px;font-weight:600">/ 箱（105支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">100四方瓶</h3>
-        <div class="product-card__price">NT$1,155 <span style="font-size:15px;font-weight:600">/ 箱（105支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/100四方瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/200四方瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/200四方瓶/main.jpg" alt="200四方瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/200四方瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/200四方瓶/main.jpg" alt="200四方瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">200四方瓶</h3>
+          <div class="product-card__price">$648 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">200四方瓶</h3>
-        <div class="product-card__price">NT$648 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/200四方瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/250四方瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/250四方瓶/main.jpg" alt="250四方瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/250四方瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/250四方瓶/main.jpg" alt="250四方瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">250四方瓶</h3>
+          <div class="product-card__price">$720 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">250四方瓶</h3>
-        <div class="product-card__price">NT$720 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/250四方瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/190四角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/190四角瓶/main.jpg" alt="190四角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/190四角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/190四角瓶/main.jpg" alt="190四角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">190四角瓶</h3>
+          <div class="product-card__price">$600 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">190四角瓶</h3>
-        <div class="product-card__price">NT$600 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/190四角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/275四角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/275四角瓶/main.jpg" alt="275四角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/275四角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/275四角瓶/main.jpg" alt="275四角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">275四角瓶</h3>
+          <div class="product-card__price">$372 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">275四角瓶</h3>
-        <div class="product-card__price">NT$372 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/275四角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/110大耳瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/110大耳瓶/main.jpg" alt="110大耳瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/110大耳瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/110大耳瓶/main.jpg" alt="110大耳瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">110大耳瓶</h3>
+          <div class="product-card__price">$1,056 <span style="font-size:15px;font-weight:600">/ 箱（96支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">110大耳瓶</h3>
-        <div class="product-card__price">NT$1,056 <span style="font-size:15px;font-weight:600">/ 箱（96支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/110大耳瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/270大耳瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/270大耳瓶/main.jpg" alt="270大耳瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/270大耳瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/270大耳瓶/main.jpg" alt="270大耳瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">270大耳瓶</h3>
+          <div class="product-card__price">$1,296 <span style="font-size:15px;font-weight:600">/ 箱（72支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">270大耳瓶</h3>
-        <div class="product-card__price">NT$1,296 <span style="font-size:15px;font-weight:600">/ 箱（72支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/270大耳瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/550大耳瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/550大耳瓶/main.jpg" alt="550大耳瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/550大耳瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/550大耳瓶/main.jpg" alt="550大耳瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">550大耳瓶</h3>
+          <div class="product-card__price">$588 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">550大耳瓶</h3>
-        <div class="product-card__price">NT$588 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/550大耳瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/290小目瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/290小目瓶/main.jpg" alt="290小目瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/290小目瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/290小目瓶/main.jpg" alt="290小目瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">290小目瓶</h3>
+          <div class="product-card__price">$300 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">290小目瓶</h3>
-        <div class="product-card__price">NT$300 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/290小目瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/465大目瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/465大目瓶/main.jpg" alt="465大目瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/465大目瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/465大目瓶/main.jpg" alt="465大目瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">465大目瓶</h3>
+          <div class="product-card__price">$174 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">465大目瓶</h3>
-        <div class="product-card__price">NT$174 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/465大目瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/30六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/30六角瓶/main.jpg" alt="30六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/30六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/30六角瓶/main.jpg" alt="30六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">30六角瓶</h3>
+          <div class="product-card__price">$450 <span style="font-size:15px;font-weight:600">/ 箱（50支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">30六角瓶</h3>
-        <div class="product-card__price">NT$450 <span style="font-size:15px;font-weight:600">/ 箱（50支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/30六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/50六角瓶/main.jpg" alt="50六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50六角瓶/main.jpg" alt="50六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50六角瓶</h3>
+          <div class="product-card__price">$456 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50六角瓶</h3>
-        <div class="product-card__price">NT$456 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/100六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/100六角瓶/main.jpg" alt="100六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/100六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/100六角瓶/main.jpg" alt="100六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">100六角瓶</h3>
+          <div class="product-card__price">$475 <span style="font-size:15px;font-weight:600">/ 箱（50支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">100六角瓶</h3>
-        <div class="product-card__price">NT$475 <span style="font-size:15px;font-weight:600">/ 箱（50支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/100六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/140六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/140六角瓶/main.jpg" alt="140六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/140六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/140六角瓶/main.jpg" alt="140六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">140六角瓶</h3>
+          <div class="product-card__price">$1,320 <span style="font-size:15px;font-weight:600">/ 箱（120支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">140六角瓶</h3>
-        <div class="product-card__price">NT$1,320 <span style="font-size:15px;font-weight:600">/ 箱（120支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/140六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/200六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/200六角瓶/main.jpg" alt="200六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/200六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/200六角瓶/main.jpg" alt="200六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">200六角瓶</h3>
+          <div class="product-card__price">$616 <span style="font-size:15px;font-weight:600">/ 箱（56支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">200六角瓶</h3>
-        <div class="product-card__price">NT$616 <span style="font-size:15px;font-weight:600">/ 箱（56支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/200六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/250六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/250六角瓶/main.jpg" alt="250六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/250六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/250六角瓶/main.jpg" alt="250六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">250六角瓶</h3>
+          <div class="product-card__price">$900 <span style="font-size:15px;font-weight:600">/ 箱（75支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">250六角瓶</h3>
-        <div class="product-card__price">NT$900 <span style="font-size:15px;font-weight:600">/ 箱（75支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/250六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/250扁六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/250扁六角瓶/main.jpg" alt="250扁六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/250扁六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/250扁六角瓶/main.jpg" alt="250扁六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">250扁六角瓶</h3>
+          <div class="product-card__price">$560 <span style="font-size:15px;font-weight:600">/ 箱（40支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">250扁六角瓶</h3>
-        <div class="product-card__price">NT$560 <span style="font-size:15px;font-weight:600">/ 箱（40支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/250扁六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="寬口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/390扁六角瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/390扁六角瓶/main.jpg" alt="390扁六角瓶主圖">
+<article class="product-card" data-category="寬口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/390扁六角瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/390扁六角瓶/main.jpg" alt="390扁六角瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">390扁六角瓶</h3>
+          <div class="product-card__price">$324 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">390扁六角瓶</h3>
-        <div class="product-card__price">NT$324 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/390扁六角瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/30小圓瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/30小圓瓶/main.jpg" alt="30小圓瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/30小圓瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/30小圓瓶/main.jpg" alt="30小圓瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">30小圓瓶</h3>
+          <div class="product-card__price">$599 <span style="font-size:15px;font-weight:600">/ 箱（63支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">30小圓瓶</h3>
-        <div class="product-card__price">NT$599 <span style="font-size:15px;font-weight:600">/ 箱（63支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/30小圓瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50小圓瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/50小圓瓶/main.jpg" alt="50小圓瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50小圓瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50小圓瓶/main.jpg" alt="50小圓瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50小圓瓶</h3>
+          <div class="product-card__price">$456 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50小圓瓶</h3>
-        <div class="product-card__price">NT$456 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50小圓瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/106小圓瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/106小圓瓶/main.jpg" alt="106小圓瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/106小圓瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/106小圓瓶/main.jpg" alt="106小圓瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">106小圓瓶</h3>
+          <div class="product-card__price">$2,112 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">106小圓瓶</h3>
-        <div class="product-card__price">NT$2,112 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/106小圓瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/170海苔瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/170海苔瓶/main.jpg" alt="170海苔瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/170海苔瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/170海苔瓶/main.jpg" alt="170海苔瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">170海苔瓶</h3>
+          <div class="product-card__price">$780 <span style="font-size:15px;font-weight:600">/ 箱（60支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">170海苔瓶</h3>
-        <div class="product-card__price">NT$780 <span style="font-size:15px;font-weight:600">/ 箱（60支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/170海苔瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/7-75oz瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/7-75oz瓶/main.jpg" alt="7.75OZ瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/7-75oz瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/7-75oz瓶/main.jpg" alt="7.75OZ瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">7.75OZ瓶</h3>
+          <div class="product-card__price">$864 <span style="font-size:15px;font-weight:600">/ 箱（72支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">7.75OZ瓶</h3>
-        <div class="product-card__price">NT$864 <span style="font-size:15px;font-weight:600">/ 箱（72支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/7-75oz瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/250醬菜瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/250醬菜瓶/main.jpg" alt="250醬菜瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/250醬菜瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/250醬菜瓶/main.jpg" alt="250醬菜瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">250醬菜瓶</h3>
+          <div class="product-card__price">$340 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">250醬菜瓶</h3>
-        <div class="product-card__price">NT$340 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/250醬菜瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/270圓瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/270圓瓶/main.jpg" alt="270圓瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/270圓瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/270圓瓶/main.jpg" alt="270圓瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">270圓瓶</h3>
+          <div class="product-card__price">$975 <span style="font-size:15px;font-weight:600">/ 箱（75支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">270圓瓶</h3>
-        <div class="product-card__price">NT$975 <span style="font-size:15px;font-weight:600">/ 箱（75支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/270圓瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/225小美乃滋瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/225小美乃滋瓶/main.jpg" alt="225小美乃滋瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/225小美乃滋瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/225小美乃滋瓶/main.jpg" alt="225小美乃滋瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">225小美乃滋瓶</h3>
+          <div class="product-card__price">$264 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">225小美乃滋瓶</h3>
-        <div class="product-card__price">NT$264 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/225小美乃滋瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/450大美乃滋瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/450大美乃滋瓶/main.jpg" alt="450大美乃滋瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/450大美乃滋瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/450大美乃滋瓶/main.jpg" alt="450大美乃滋瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">450大美乃滋瓶</h3>
+          <div class="product-card__price">$162 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">450大美乃滋瓶</h3>
-        <div class="product-card__price">NT$162 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/450大美乃滋瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/570泡菜瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/570泡菜瓶/main.jpg" alt="570泡菜瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/570泡菜瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/570泡菜瓶/main.jpg" alt="570泡菜瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">570泡菜瓶</h3>
+          <div class="product-card__price">$1,120 <span style="font-size:15px;font-weight:600">/ 箱（64支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">570泡菜瓶</h3>
-        <div class="product-card__price">NT$1,120 <span style="font-size:15px;font-weight:600">/ 箱（64支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/570泡菜瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/600六號瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/600六號瓶/main.jpg" alt="600六號瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/600六號瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/600六號瓶/main.jpg" alt="600六號瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">600六號瓶</h3>
+          <div class="product-card__price">$504 <span style="font-size:15px;font-weight:600">/ 箱（28支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">600六號瓶</h3>
-        <div class="product-card__price">NT$504 <span style="font-size:15px;font-weight:600">/ 箱（28支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/600六號瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/800五號瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/800五號瓶/main.jpg" alt="800五號瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/800五號瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/800五號瓶/main.jpg" alt="800五號瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">800五號瓶</h3>
+          <div class="product-card__price">$480 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">800五號瓶</h3>
-        <div class="product-card__price">NT$480 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/800五號瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/200造型油品瓶a款.html">
-        <img src="/glassflowlab-site-preview/assets/products/200造型油品瓶a款/main.jpg" alt="200造型油品瓶A款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/200造型油品瓶a款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/200造型油品瓶a款/main.jpg" alt="200造型油品瓶A款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">200造型油品瓶A款</h3>
+          <div class="product-card__price">$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">200造型油品瓶A款</h3>
-        <div class="product-card__price">NT$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/200造型油品瓶a款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/200造型油品瓶b款.html">
-        <img src="/glassflowlab-site-preview/assets/products/200造型油品瓶b款/main.jpg" alt="200造型油品瓶B款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/200造型油品瓶b款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/200造型油品瓶b款/main.jpg" alt="200造型油品瓶B款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">200造型油品瓶B款</h3>
+          <div class="product-card__price">$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">200造型油品瓶B款</h3>
-        <div class="product-card__price">NT$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/200造型油品瓶b款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/200造型油品瓶c款.html">
-        <img src="/glassflowlab-site-preview/assets/products/200造型油品瓶c款/main.jpg" alt="200造型油品瓶C款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/200造型油品瓶c款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/200造型油品瓶c款/main.jpg" alt="200造型油品瓶C款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">200造型油品瓶C款</h3>
+          <div class="product-card__price">$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">200造型油品瓶C款</h3>
-        <div class="product-card__price">NT$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/200造型油品瓶c款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/250透明精緻油品瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/250透明精緻油品瓶/main.jpg" alt="250透明精緻油品瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/250透明精緻油品瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/250透明精緻油品瓶/main.jpg" alt="250透明精緻油品瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">250透明精緻油品瓶</h3>
+          <div class="product-card__price">$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">250透明精緻油品瓶</h3>
-        <div class="product-card__price">NT$456 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/250透明精緻油品瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/250茶色精緻油品瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/250茶色精緻油品瓶/main.jpg" alt="250茶色精緻油品瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/250茶色精緻油品瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/250茶色精緻油品瓶/main.jpg" alt="250茶色精緻油品瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">250茶色精緻油品瓶</h3>
+          <div class="product-card__price">$480 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">250茶色精緻油品瓶</h3>
-        <div class="product-card__price">NT$480 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/250茶色精緻油品瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/500透明精緻油品瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/500透明精緻油品瓶/main.jpg" alt="500透明精緻油品瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/500透明精緻油品瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/500透明精緻油品瓶/main.jpg" alt="500透明精緻油品瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">500透明精緻油品瓶</h3>
+          <div class="product-card__price">$288 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">500透明精緻油品瓶</h3>
-        <div class="product-card__price">NT$288 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/500透明精緻油品瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/138蜂蜜瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/138蜂蜜瓶/main.jpg" alt="138蜂蜜瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/138蜂蜜瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/138蜂蜜瓶/main.jpg" alt="138蜂蜜瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">138蜂蜜瓶</h3>
+          <div class="product-card__price">$840 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">138蜂蜜瓶</h3>
-        <div class="product-card__price">NT$840 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/138蜂蜜瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/300透明梅酒瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/300透明梅酒瓶/main.jpg" alt="300透明梅酒瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/300透明梅酒瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/300透明梅酒瓶/main.jpg" alt="300透明梅酒瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">300透明梅酒瓶</h3>
+          <div class="product-card__price">$600 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">300透明梅酒瓶</h3>
-        <div class="product-card__price">NT$600 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/300透明梅酒瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/300霧面梅酒瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/300霧面梅酒瓶/main.jpg" alt="300霧面梅酒瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/300霧面梅酒瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/300霧面梅酒瓶/main.jpg" alt="300霧面梅酒瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">300霧面梅酒瓶</h3>
+          <div class="product-card__price">$720 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">300霧面梅酒瓶</h3>
-        <div class="product-card__price">NT$720 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/300霧面梅酒瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/300霧面冷泡茶瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/300霧面冷泡茶瓶/main.jpg" alt="300霧面冷泡茶瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/300霧面冷泡茶瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/300霧面冷泡茶瓶/main.jpg" alt="300霧面冷泡茶瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">300霧面冷泡茶瓶</h3>
+          <div class="product-card__price">$720 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">300霧面冷泡茶瓶</h3>
-        <div class="product-card__price">NT$720 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/300霧面冷泡茶瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/500曲線隨身瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/500曲線隨身瓶/main.jpg" alt="500曲線隨身瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/500曲線隨身瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/500曲線隨身瓶/main.jpg" alt="500曲線隨身瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">500曲線隨身瓶</h3>
+          <div class="product-card__price">$672 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">500曲線隨身瓶</h3>
-        <div class="product-card__price">NT$672 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/500曲線隨身瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/550透明梅酒瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/550透明梅酒瓶/main.jpg" alt="550透明梅酒瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/550透明梅酒瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/550透明梅酒瓶/main.jpg" alt="550透明梅酒瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">550透明梅酒瓶</h3>
+          <div class="product-card__price">$672 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">550透明梅酒瓶</h3>
-        <div class="product-card__price">NT$672 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/550透明梅酒瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/889透明梅酒瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/889透明梅酒瓶/main.jpg" alt="889透明梅酒瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/889透明梅酒瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/889透明梅酒瓶/main.jpg" alt="889透明梅酒瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">889透明梅酒瓶</h3>
+          <div class="product-card__price">$816 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">889透明梅酒瓶</h3>
-        <div class="product-card__price">NT$816 <span style="font-size:15px;font-weight:600">/ 箱（24支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/889透明梅酒瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/100透明香氛瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/100透明香氛瓶/main.jpg" alt="100透明香氛瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/100透明香氛瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/100透明香氛瓶/main.jpg" alt="100透明香氛瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">100透明香氛瓶</h3>
+          <div class="product-card__price">$1,104 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">100透明香氛瓶</h3>
-        <div class="product-card__price">NT$1,104 <span style="font-size:15px;font-weight:600">/ 箱（48支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/100透明香氛瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50樣品瓶a款.html">
-        <img src="/glassflowlab-site-preview/assets/products/50樣品瓶a款/main.jpg" alt="50樣品瓶A款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50樣品瓶a款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50樣品瓶a款/main.jpg" alt="50樣品瓶A款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50樣品瓶A款</h3>
+          <div class="product-card__price">$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50樣品瓶A款</h3>
-        <div class="product-card__price">NT$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50樣品瓶a款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50樣品瓶b款.html">
-        <img src="/glassflowlab-site-preview/assets/products/50樣品瓶b款/main.jpg" alt="50樣品瓶B款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50樣品瓶b款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50樣品瓶b款/main.jpg" alt="50樣品瓶B款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50樣品瓶B款</h3>
+          <div class="product-card__price">$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50樣品瓶B款</h3>
-        <div class="product-card__price">NT$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50樣品瓶b款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50樣品瓶c款.html">
-        <img src="/glassflowlab-site-preview/assets/products/50樣品瓶c款/main.jpg" alt="50樣品瓶C款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50樣品瓶c款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50樣品瓶c款/main.jpg" alt="50樣品瓶C款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50樣品瓶C款</h3>
+          <div class="product-card__price">$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50樣品瓶C款</h3>
-        <div class="product-card__price">NT$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50樣品瓶c款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50樣品瓶d款.html">
-        <img src="/glassflowlab-site-preview/assets/products/50樣品瓶d款/main.jpg" alt="50樣品瓶D款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50樣品瓶d款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50樣品瓶d款/main.jpg" alt="50樣品瓶D款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50樣品瓶D款</h3>
+          <div class="product-card__price">$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50樣品瓶D款</h3>
-        <div class="product-card__price">NT$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50樣品瓶d款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/50樣品瓶f款.html">
-        <img src="/glassflowlab-site-preview/assets/products/50樣品瓶f款/main.jpg" alt="50樣品瓶F款主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/50樣品瓶f款.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/50樣品瓶f款/main.jpg" alt="50樣品瓶F款主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">50樣品瓶F款</h3>
+          <div class="product-card__price">$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">50樣品瓶F款</h3>
-        <div class="product-card__price">NT$2,304 <span style="font-size:15px;font-weight:600">/ 箱（192支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/50樣品瓶f款.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/375透明珍釀瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/375透明珍釀瓶/main.jpg" alt="375透明珍釀瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/375透明珍釀瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/375透明珍釀瓶/main.jpg" alt="375透明珍釀瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">375透明珍釀瓶</h3>
+          <div class="product-card__price">$408 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">375透明珍釀瓶</h3>
-        <div class="product-card__price">NT$408 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/375透明珍釀瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="窄口瓶">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/600透明0-6長鑼口瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/600透明0-6長鑼口瓶/main.jpg" alt="600透明0.6長鑼口瓶主圖">
+<article class="product-card" data-category="窄口瓶">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/600透明0-6長鑼口瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/600透明0-6長鑼口瓶/main.jpg" alt="600透明0.6長鑼口瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">600透明0.6長鑼口瓶</h3>
+          <div class="product-card__price">$216 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">600透明0.6長鑼口瓶</h3>
-        <div class="product-card__price">NT$216 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/600透明0-6長鑼口瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/600霧面0-6長鑼口瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/600霧面0-6長鑼口瓶/main.jpg" alt="600霧面0.6長鑼口瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/600霧面0-6長鑼口瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/600霧面0-6長鑼口瓶/main.jpg" alt="600霧面0.6長鑼口瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">600霧面0.6長鑼口瓶</h3>
+          <div class="product-card__price">$240 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">600霧面0.6長鑼口瓶</h3>
-        <div class="product-card__price">NT$240 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/600霧面0-6長鑼口瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/600綠色0-6長鑼口瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/600綠色0-6長鑼口瓶/main.jpg" alt="600綠色0.6長鑼口瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/600綠色0-6長鑼口瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/600綠色0-6長鑼口瓶/main.jpg" alt="600綠色0.6長鑼口瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">600綠色0.6長鑼口瓶</h3>
+          <div class="product-card__price">$240 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">600綠色0.6長鑼口瓶</h3>
-        <div class="product-card__price">NT$240 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/600綠色0-6長鑼口瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/500透明醷醇瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/500透明醷醇瓶/main.jpg" alt="500透明醷醇瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/500透明醷醇瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/500透明醷醇瓶/main.jpg" alt="500透明醷醇瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">500透明醷醇瓶</h3>
+          <div class="product-card__price">$264 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">500透明醷醇瓶</h3>
-        <div class="product-card__price">NT$264 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/500透明醷醇瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/500霧面醷醇瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/500霧面醷醇瓶/main.jpg" alt="500霧面醷醇瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/500霧面醷醇瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/500霧面醷醇瓶/main.jpg" alt="500霧面醷醇瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">500霧面醷醇瓶</h3>
+          <div class="product-card__price">$276 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">500霧面醷醇瓶</h3>
-        <div class="product-card__price">NT$276 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/500霧面醷醇瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/520麻油瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/520麻油瓶/main.jpg" alt="520麻油瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/520麻油瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/520麻油瓶/main.jpg" alt="520麻油瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">520麻油瓶</h3>
+          <div class="product-card__price">$204 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">520麻油瓶</h3>
-        <div class="product-card__price">NT$204 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/520麻油瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/563蜂蜜瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/563蜂蜜瓶/main.jpg" alt="563蜂蜜瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/563蜂蜜瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/563蜂蜜瓶/main.jpg" alt="563蜂蜜瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">563蜂蜜瓶</h3>
+          <div class="product-card__price">$204 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">563蜂蜜瓶</h3>
-        <div class="product-card__price">NT$204 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/563蜂蜜瓶.html">看商品頁</a>
-      </div>
     </article>
-    <article class="product-card" data-category="">
-      <a class="product-card__img" href="/glassflowlab-site-preview/products/600圓蜂蜜瓶.html">
-        <img src="/glassflowlab-site-preview/assets/products/600圓蜂蜜瓶/main.jpg" alt="600圓蜂蜜瓶主圖">
+<article class="product-card" data-category="">
+      <a class="product-card__full" href="/glassflowlab-site-preview/products/600圓蜂蜜瓶.html" style="display:block;text-decoration:none;color:inherit">
+        <div class="product-card__img">
+          <img src="/glassflowlab-site-preview/assets/products/600圓蜂蜜瓶/main.jpg" alt="600圓蜂蜜瓶主圖">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">600圓蜂蜜瓶</h3>
+          <div class="product-card__price">$216 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
+        </div>
       </a>
-      <div class="product-card__body">
-        <h3 class="product-card__name">600圓蜂蜜瓶</h3>
-        <div class="product-card__price">NT$216 <span style="font-size:15px;font-weight:600">/ 箱（12支）</span></div>
-        <a class="btn" href="/glassflowlab-site-preview/products/600圓蜂蜜瓶.html">看商品頁</a>
-      </div>
     </article>
   </div>
 </div>
-<footer class="site-footer">
-  <a href="/glassflowlab-site-preview/">玻璃小店</a>｜商品價格為自取價，配送運費另計，實際庫存與出貨時間以下單前確認為準。
-</footer>
+<footer class="site-footer"><a href="/glassflowlab-site-preview/">玻璃小店</a>｜商品價格為自取價，配送運費另計，實際庫存與出貨時間以下單前確認為準。</footer>
 <script>
 (function(){
-  var btns = document.querySelectorAll('.sidebar-btn');
-  var cards = document.querySelectorAll('.product-card');
-
-  function applyFilter(filter){
-    cards.forEach(function(card){
-      if(filter === 'all' || card.getAttribute('data-category') === filter){
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
+  var btns=document.querySelectorAll('.sidebar-btn');
+  var cards=document.querySelectorAll('.product-card');
+  function applyFilter(f){
+    cards.forEach(function(c){c.classList.remove('hidden')});
+    if(f!=='all'){
+      cards.forEach(function(c){
+        if(c.getAttribute('data-category')!==f)c.classList.add('hidden');
+      });
+    }
     btns.forEach(function(b){b.classList.remove('active')});
     btns.forEach(function(b){
-      if(b.getAttribute('data-filter') === filter){
-        b.classList.add('active');
-      }
+      if(b.getAttribute('data-filter')===f)b.classList.add('active');
     });
   }
-
   btns.forEach(function(btn){
     btn.addEventListener('click',function(){
       applyFilter(btn.getAttribute('data-filter'));
     });
   });
-
-  // Read URL param on load to support direct linking from category cards
-  var params = new URLSearchParams(window.location.search);
-  var cat = params.get('category');
-  if(cat){ applyFilter(cat); }
+  var params=new URLSearchParams(window.location.search);
+  var cat=params.get('category');
+  if(cat)applyFilter(cat);
 })();
 </script>
 </body>
