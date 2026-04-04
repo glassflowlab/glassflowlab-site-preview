@@ -14,7 +14,7 @@
     .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);font-size:18px;font-weight:800;flex-shrink:0}
     .site-logo img{width:34px;height:34px;border-radius:8px;display:block}
     .site-nav{display:flex;gap:8px;align-items:center}
-    .site-nav a{display:inline-flex;align-items:center;padding:8px 14px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:700;border:1px solid transparent;transition:all .15s;white-space:nowrap}
+    .site-nav a{display:inline-flex;align-items:center;padding:8px 14px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:700;border:1px solid transparent;transition:all .15s;white-space:nowrap}
     .site-nav a.btn-home{border-color:#d4cdc6;color:var(--dark);background:#fff}
     .site-nav a.btn-home:hover,.site-nav a.active{background:#f6efe8;border-color:#b08e73}
     .site-nav a.btn-line{background:var(--green);color:#fff;border-color:var(--green)}
@@ -52,16 +52,16 @@
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:22px}
     .quick-notes{display:grid;gap:10px}
-    .quick-note{padding:14px 16px;background:#fcfbf9;border:1px solid var(--line);border-radius:14px;font-size:14px;color:#43362d}
+    .quick-note{padding:14px 16px;background:#fcfbf9;border:1px solid var(--line);border-radius:12px;font-size:14px;color:#43362d}
     .quick-note strong{display:block;margin-bottom:4px}
     table{width:100%;border-collapse:collapse}
     th,td{padding:12px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
     th{width:120px;color:#6b5849;font-weight:800}
     td{color:#41362f}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-    .step{background:#fff;border:1px solid #eadbcb;border-radius:14px;padding:14px}
+    .step{background:#fff;border:1px solid #eadbcb;border-radius:12px;padding:14px}
     .step-no{font-size:12px;font-weight:800;color:#9a7d63;margin-bottom:6px}
-    .message-box{margin-top:14px;padding:16px;border-radius:14px;background:#fff;border:1px solid #eadbcb}
+    .message-box{margin-top:14px;padding:16px;border-radius:12px;background:#fff;border:1px solid #eadbcb}
     .message-box pre{margin:8px 0 0;white-space:pre-wrap;font-family:inherit;font-size:14px;line-height:1.7;color:#4b3d33}
     .faq details{border-top:1px solid var(--line);padding:14px 0}
     .faq details:first-of-type{border-top:none;padding-top:0}
@@ -82,6 +82,10 @@
       .site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px}
       .site-nav a{padding:7px 10px;font-size:13px}
     }
+
+    .site-footer{background:#fff;border-top:1px solid var(--line);padding:22px 20px;text-align:center;color:var(--muted);font-size:13px}
+    .site-footer a{color:var(--muted);text-decoration:none}
+    .site-footer a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
@@ -125,8 +129,8 @@
         <div class="price-sub">自取價，配送另計運費 · 平均約 NT$11 / 支</div>
         
         <div style="margin-top:10px">
-          <div class="price-main"><span class="price-lg">$1,313</span><span class="price-unit">/ 箱（真空蓋版，105支）</span></div>
-          <div class="price-sub">自取價，配送另計運費 · 平均約 NT$12.5 / 支</div>
+          <div style="margin-top:6px"><span style="font-size:18px;font-weight:700;color:#c0392b">$1,313</span><span style="font-size:14px;color:#6b5849"> / 箱（真空蓋版，105支）</span></div>
+          <div class="price-sub">自取價，配送另計運費 · 平均約 $12.5 / 支</div>
         </div>
 
         <div class="info-strip">
@@ -143,7 +147,7 @@
         <div style="margin-top:14px">
           <div style="font-size:13px;font-weight:700;color:#6b5849;margin-bottom:8px">可加購配件</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <a class="btn ghost sm" href="#">收縮膜</a><a class="btn ghost sm" href="#">貼紙</a>
+            <a class="btn ghost sm" >收縮膜</span><a class="btn ghost sm" >貼紙</span>
           </div>
         </div>
 
