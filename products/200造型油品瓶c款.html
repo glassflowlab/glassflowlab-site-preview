@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>200造型油品瓶C款｜玻璃小店</title>
   <style>
-    :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--linegreen:#06c755}
+    :root{--green:#06c755;--dark:#2f251f;--muted:#6b5849;--line:#e7e0d7;--card:#fff;--warm:#6f5b4b;--bg:#f7f5f2;--text:#222}
     *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
     .wrap{max-width:1080px;margin:0 auto;padding:20px}
-    .header{padding:16px 0 8px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-    .brand{display:flex;align-items:center;gap:10px;color:#3f332b;font-weight:800;margin-right:auto}
-    .brand img{width:34px;height:34px;border-radius:8px}
-    .nav-btns{display:flex;gap:8px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer;font-size:14px}
-    .btn.line{background:var(--linegreen);color:#fff}
-    .btn.ghost{background:#fff;border-color:var(--line);color:#4d4036}
-    .btn.sm{padding:7px 13px;font-size:13px}
+    /* ===== SHARED HEADER ===== */
+    .site-header{background:var(--card);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:100}
+    .site-header__inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);font-size:18px;font-weight:800;flex-shrink:0}
+    .site-logo img{width:34px;height:34px;border-radius:8px;display:block}
+    .site-nav{display:flex;gap:8px;align-items:center}
+    .site-nav a{display:inline-flex;align-items:center;padding:8px 14px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:700;border:1px solid transparent;transition:all .15s;white-space:nowrap}
+    .site-nav a.btn-home{border-color:#d4cdc6;color:var(--dark);background:#fff}
+    .site-nav a.btn-home:hover,.site-nav a.active{background:#f6efe8;border-color:#b08e73}
+    .site-nav a.btn-line{background:var(--green);color:#fff;border-color:var(--green)}
+    .site-nav a.btn-line:hover{background:#05a348}
     .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
     .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
     .panel{padding:24px}
@@ -66,23 +69,31 @@
       .hero,.steps{grid-template-columns:1fr}.wrap{padding:16px}h1{font-size:28px}
       .thumbs{grid-template-columns:repeat(5,minmax(64px,1fr));overflow:auto}
       .sticky-inner{align-items:flex-start;flex-direction:column}.sticky-inner .btn{width:100%}
-      .header{flex-direction:column;align-items:flex-start}
-      .nav-btns{width:100%}
+      .site-header__inner{padding:10px 16px;min-height:52px}
+      .site-logo{font-size:16px;min-width:0}
+      .site-logo img{width:28px;height:28px}
+      .site-logo span{white-space:nowrap}
+      .site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px}
+      .site-nav a{padding:7px 10px;font-size:13px}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="header">
-      <a class="brand" href="/glassflowlab-site-preview/">
-        <img src="/glassflowlab-site-preview/assets/common/logo.png" alt="玻璃小店 logo">
-        <span>玻璃小店</span>
-      </a>
-      <div class="nav-btns">
-        <a class="btn ghost sm" href="/glassflowlab-site-preview/">回首頁</a>
-        <a class="btn ghost sm" href="/glassflowlab-site-preview/products.html">全部商品</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="/glassflowlab-site-preview/">
+          <img src="/glassflowlab-site-preview/assets/common/logo.png" alt="玻璃小店 logo">
+          <span style="text-decoration:none">玻璃小店</span>
+        </a>
+        <nav class="site-nav">
+          <a class="btn-home" href="/glassflowlab-site-preview/">回首頁</a>
+          <a class="btn-home" href="/glassflowlab-site-preview/products.html">全部商品</a>
+          <a class="btn-home" href="/glassflowlab-site-preview/category/all.html">分類</a>
+          <a class="btn-home btn-line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢問</a>
+        </nav>
       </div>
-    </div>
+    </header>
 
     <div class="hero">
       <section class="card">
