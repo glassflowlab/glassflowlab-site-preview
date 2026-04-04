@@ -8,11 +8,459 @@
     "url": "products/100四方瓶.html"
   },
   {
+    "name": "200四方瓶",
+    "slug": "200四方瓶",
+    "price": 648,
+    "boxQuantity": 48,
+    "image": "assets/products/200四方瓶/main.jpg",
+    "url": "products/200四方瓶.html"
+  },
+  {
+    "name": "250四方瓶",
+    "slug": "250四方瓶",
+    "price": 720,
+    "boxQuantity": 48,
+    "image": "assets/products/250四方瓶/main.jpg",
+    "url": "products/250四方瓶.html"
+  },
+  {
+    "name": "190四角瓶",
+    "slug": "190四角瓶",
+    "price": 600,
+    "boxQuantity": 48,
+    "image": "assets/products/190四角瓶/main.jpg",
+    "url": "products/190四角瓶.html"
+  },
+  {
+    "name": "275四角瓶",
+    "slug": "275四角瓶",
+    "price": 372,
+    "boxQuantity": 24,
+    "image": "assets/products/275四角瓶/main.jpg",
+    "url": "products/275四角瓶.html"
+  },
+  {
+    "name": "110大耳瓶",
+    "slug": "110大耳瓶",
+    "price": 1056,
+    "boxQuantity": 96,
+    "image": "assets/products/110大耳瓶/main.jpg",
+    "url": "products/110大耳瓶.html"
+  },
+  {
+    "name": "270大耳瓶",
+    "slug": "270大耳瓶",
+    "price": 1296,
+    "boxQuantity": 72,
+    "image": "assets/products/270大耳瓶/main.jpg",
+    "url": "products/270大耳瓶.html"
+  },
+  {
+    "name": "550大耳瓶",
+    "slug": "550大耳瓶",
+    "price": 588,
+    "boxQuantity": 24,
+    "image": "assets/products/550大耳瓶/main.jpg",
+    "url": "products/550大耳瓶.html"
+  },
+  {
+    "name": "290小目瓶",
+    "slug": "290小目瓶",
+    "price": 300,
+    "boxQuantity": 24,
+    "image": "assets/products/290小目瓶/main.jpg",
+    "url": "products/290小目瓶.html"
+  },
+  {
+    "name": "465大目瓶",
+    "slug": "465大目瓶",
+    "price": 174,
+    "boxQuantity": 12,
+    "image": "assets/products/465大目瓶/main.jpg",
+    "url": "products/465大目瓶.html"
+  },
+  {
+    "name": "30六角瓶",
+    "slug": "30六角瓶",
+    "price": 450,
+    "boxQuantity": 50,
+    "image": "assets/products/30六角瓶/main.jpg",
+    "url": "products/30六角瓶.html"
+  },
+  {
+    "name": "50六角瓶",
+    "slug": "50六角瓶",
+    "price": 456,
+    "boxQuantity": 48,
+    "image": "assets/products/50六角瓶/main.jpg",
+    "url": "products/50六角瓶.html"
+  },
+  {
     "name": "100六角瓶",
     "slug": "100六角瓶",
     "price": 475,
     "boxQuantity": 50,
     "image": "assets/products/100六角瓶/main.jpg",
     "url": "products/100六角瓶.html"
+  },
+  {
+    "name": "140六角瓶",
+    "slug": "140六角瓶",
+    "price": 1320,
+    "boxQuantity": 120,
+    "image": "assets/products/140六角瓶/main.jpg",
+    "url": "products/140六角瓶.html"
+  },
+  {
+    "name": "200六角瓶",
+    "slug": "200六角瓶",
+    "price": 616,
+    "boxQuantity": 56,
+    "image": "assets/products/200六角瓶/main.jpg",
+    "url": "products/200六角瓶.html"
+  },
+  {
+    "name": "250六角瓶",
+    "slug": "250六角瓶",
+    "price": 900,
+    "boxQuantity": 75,
+    "image": "assets/products/250六角瓶/main.jpg",
+    "url": "products/250六角瓶.html"
+  },
+  {
+    "name": "250扁六角瓶",
+    "slug": "250扁六角瓶",
+    "price": 560,
+    "boxQuantity": 40,
+    "image": "assets/products/250扁六角瓶/main.jpg",
+    "url": "products/250扁六角瓶.html"
+  },
+  {
+    "name": "390扁六角瓶",
+    "slug": "390扁六角瓶",
+    "price": 324,
+    "boxQuantity": 24,
+    "image": "assets/products/390扁六角瓶/main.jpg",
+    "url": "products/390扁六角瓶.html"
+  },
+  {
+    "name": "30小圓瓶",
+    "slug": "30小圓瓶",
+    "price": 599,
+    "boxQuantity": 63,
+    "image": "assets/products/30小圓瓶/main.jpg",
+    "url": "products/30小圓瓶.html"
+  },
+  {
+    "name": "50小圓瓶",
+    "slug": "50小圓瓶",
+    "price": 456,
+    "boxQuantity": 48,
+    "image": "assets/products/50小圓瓶/main.jpg",
+    "url": "products/50小圓瓶.html"
+  },
+  {
+    "name": "106小圓瓶",
+    "slug": "106小圓瓶",
+    "price": 2112,
+    "boxQuantity": 192,
+    "image": "assets/products/106小圓瓶/main.jpg",
+    "url": "products/106小圓瓶.html"
+  },
+  {
+    "name": "170海苔瓶",
+    "slug": "170海苔瓶",
+    "price": 780,
+    "boxQuantity": 60,
+    "image": "assets/products/170海苔瓶/main.jpg",
+    "url": "products/170海苔瓶.html"
+  },
+  {
+    "name": "7.75OZ瓶",
+    "slug": "7-75oz瓶",
+    "price": 864,
+    "boxQuantity": 72,
+    "image": "assets/products/7-75oz瓶/main.jpg",
+    "url": "products/7-75oz瓶.html"
+  },
+  {
+    "name": "250醬菜瓶",
+    "slug": "250醬菜瓶",
+    "price": 340,
+    "boxQuantity": 24,
+    "image": "assets/products/250醬菜瓶/main.jpg",
+    "url": "products/250醬菜瓶.html"
+  },
+  {
+    "name": "270圓瓶",
+    "slug": "270圓瓶",
+    "price": 975,
+    "boxQuantity": 75,
+    "image": "assets/products/270圓瓶/main.jpg",
+    "url": "products/270圓瓶.html"
+  },
+  {
+    "name": "225小美乃滋瓶",
+    "slug": "225小美乃滋瓶",
+    "price": 264,
+    "boxQuantity": 24,
+    "image": "assets/products/225小美乃滋瓶/main.jpg",
+    "url": "products/225小美乃滋瓶.html"
+  },
+  {
+    "name": "450大美乃滋瓶",
+    "slug": "450大美乃滋瓶",
+    "price": 162,
+    "boxQuantity": 12,
+    "image": "assets/products/450大美乃滋瓶/main.jpg",
+    "url": "products/450大美乃滋瓶.html"
+  },
+  {
+    "name": "570泡菜瓶",
+    "slug": "570泡菜瓶",
+    "price": 1120,
+    "boxQuantity": 64,
+    "image": "assets/products/570泡菜瓶/main.jpg",
+    "url": "products/570泡菜瓶.html"
+  },
+  {
+    "name": "600六號瓶",
+    "slug": "600六號瓶",
+    "price": 504,
+    "boxQuantity": 28,
+    "image": "assets/products/600六號瓶/main.jpg",
+    "url": "products/600六號瓶.html"
+  },
+  {
+    "name": "800五號瓶",
+    "slug": "800五號瓶",
+    "price": 480,
+    "boxQuantity": 24,
+    "image": "assets/products/800五號瓶/main.jpg",
+    "url": "products/800五號瓶.html"
+  },
+  {
+    "name": "200造型油品瓶A款",
+    "slug": "200造型油品瓶a款",
+    "price": 456,
+    "boxQuantity": 24,
+    "image": "assets/products/200造型油品瓶a款/main.jpg",
+    "url": "products/200造型油品瓶a款.html"
+  },
+  {
+    "name": "200造型油品瓶B款",
+    "slug": "200造型油品瓶b款",
+    "price": 456,
+    "boxQuantity": 24,
+    "image": "assets/products/200造型油品瓶b款/main.jpg",
+    "url": "products/200造型油品瓶b款.html"
+  },
+  {
+    "name": "200造型油品瓶C款",
+    "slug": "200造型油品瓶c款",
+    "price": 456,
+    "boxQuantity": 24,
+    "image": "assets/products/200造型油品瓶c款/main.jpg",
+    "url": "products/200造型油品瓶c款.html"
+  },
+  {
+    "name": "250透明精緻油品瓶",
+    "slug": "250透明精緻油品瓶",
+    "price": 456,
+    "boxQuantity": 24,
+    "image": "assets/products/250透明精緻油品瓶/main.jpg",
+    "url": "products/250透明精緻油品瓶.html"
+  },
+  {
+    "name": "250茶色精緻油品瓶",
+    "slug": "250茶色精緻油品瓶",
+    "price": 480,
+    "boxQuantity": 24,
+    "image": "assets/products/250茶色精緻油品瓶/main.jpg",
+    "url": "products/250茶色精緻油品瓶.html"
+  },
+  {
+    "name": "500透明精緻油品瓶",
+    "slug": "500透明精緻油品瓶",
+    "price": 288,
+    "boxQuantity": 12,
+    "image": "assets/products/500透明精緻油品瓶/main.jpg",
+    "url": "products/500透明精緻油品瓶.html"
+  },
+  {
+    "name": "138蜂蜜瓶",
+    "slug": "138蜂蜜瓶",
+    "price": 840,
+    "boxQuantity": 24,
+    "image": "assets/products/138蜂蜜瓶/main.jpg",
+    "url": "products/138蜂蜜瓶.html"
+  },
+  {
+    "name": "300透明梅酒瓶",
+    "slug": "300透明梅酒瓶",
+    "price": 600,
+    "boxQuantity": 24,
+    "image": "assets/products/300透明梅酒瓶/main.jpg",
+    "url": "products/300透明梅酒瓶.html"
+  },
+  {
+    "name": "300霧面梅酒瓶",
+    "slug": "300霧面梅酒瓶",
+    "price": 720,
+    "boxQuantity": 24,
+    "image": "assets/products/300霧面梅酒瓶/main.jpg",
+    "url": "products/300霧面梅酒瓶.html"
+  },
+  {
+    "name": "300霧面冷泡茶瓶",
+    "slug": "300霧面冷泡茶瓶",
+    "price": 720,
+    "boxQuantity": 24,
+    "image": "assets/products/300霧面冷泡茶瓶/main.jpg",
+    "url": "products/300霧面冷泡茶瓶.html"
+  },
+  {
+    "name": "500曲線隨身瓶",
+    "slug": "500曲線隨身瓶",
+    "price": 672,
+    "boxQuantity": 24,
+    "image": "assets/products/500曲線隨身瓶/main.jpg",
+    "url": "products/500曲線隨身瓶.html"
+  },
+  {
+    "name": "550透明梅酒瓶",
+    "slug": "550透明梅酒瓶",
+    "price": 672,
+    "boxQuantity": 24,
+    "image": "assets/products/550透明梅酒瓶/main.jpg",
+    "url": "products/550透明梅酒瓶.html"
+  },
+  {
+    "name": "889透明梅酒瓶",
+    "slug": "889透明梅酒瓶",
+    "price": 816,
+    "boxQuantity": 24,
+    "image": "assets/products/889透明梅酒瓶/main.jpg",
+    "url": "products/889透明梅酒瓶.html"
+  },
+  {
+    "name": "100透明香氛瓶",
+    "slug": "100透明香氛瓶",
+    "price": 1104,
+    "boxQuantity": 48,
+    "image": "assets/products/100透明香氛瓶/main.jpg",
+    "url": "products/100透明香氛瓶.html"
+  },
+  {
+    "name": "50樣品瓶A款",
+    "slug": "50樣品瓶a款",
+    "price": 2304,
+    "boxQuantity": 192,
+    "image": "assets/products/50樣品瓶a款/main.jpg",
+    "url": "products/50樣品瓶a款.html"
+  },
+  {
+    "name": "50樣品瓶B款",
+    "slug": "50樣品瓶b款",
+    "price": 2304,
+    "boxQuantity": 192,
+    "image": "assets/products/50樣品瓶b款/main.jpg",
+    "url": "products/50樣品瓶b款.html"
+  },
+  {
+    "name": "50樣品瓶C款",
+    "slug": "50樣品瓶c款",
+    "price": 2304,
+    "boxQuantity": 192,
+    "image": "assets/products/50樣品瓶c款/main.jpg",
+    "url": "products/50樣品瓶c款.html"
+  },
+  {
+    "name": "50樣品瓶D款",
+    "slug": "50樣品瓶d款",
+    "price": 2304,
+    "boxQuantity": 192,
+    "image": "assets/products/50樣品瓶d款/main.jpg",
+    "url": "products/50樣品瓶d款.html"
+  },
+  {
+    "name": "50樣品瓶F款",
+    "slug": "50樣品瓶f款",
+    "price": 2304,
+    "boxQuantity": 192,
+    "image": "assets/products/50樣品瓶f款/main.jpg",
+    "url": "products/50樣品瓶f款.html"
+  },
+  {
+    "name": "375透明珍釀瓶",
+    "slug": "375透明珍釀瓶",
+    "price": 408,
+    "boxQuantity": 12,
+    "image": "assets/products/375透明珍釀瓶/main.jpg",
+    "url": "products/375透明珍釀瓶.html"
+  },
+  {
+    "name": "600透明0.6長鑼口瓶",
+    "slug": "600透明0-6長鑼口瓶",
+    "price": 216,
+    "boxQuantity": 12,
+    "image": "assets/products/600透明0-6長鑼口瓶/main.jpg",
+    "url": "products/600透明0-6長鑼口瓶.html"
+  },
+  {
+    "name": "600霧面0.6長鑼口瓶",
+    "slug": "600霧面0-6長鑼口瓶",
+    "price": 240,
+    "boxQuantity": 12,
+    "image": "assets/products/600霧面0-6長鑼口瓶/main.jpg",
+    "url": "products/600霧面0-6長鑼口瓶.html"
+  },
+  {
+    "name": "600綠色0.6長鑼口瓶",
+    "slug": "600綠色0-6長鑼口瓶",
+    "price": 240,
+    "boxQuantity": 12,
+    "image": "assets/products/600綠色0-6長鑼口瓶/main.jpg",
+    "url": "products/600綠色0-6長鑼口瓶.html"
+  },
+  {
+    "name": "500透明醷醇瓶",
+    "slug": "500透明醷醇瓶",
+    "price": 264,
+    "boxQuantity": 12,
+    "image": "assets/products/500透明醷醇瓶/main.jpg",
+    "url": "products/500透明醷醇瓶.html"
+  },
+  {
+    "name": "500霧面醷醇瓶",
+    "slug": "500霧面醷醇瓶",
+    "price": 276,
+    "boxQuantity": 12,
+    "image": "assets/products/500霧面醷醇瓶/main.jpg",
+    "url": "products/500霧面醷醇瓶.html"
+  },
+  {
+    "name": "520麻油瓶",
+    "slug": "520麻油瓶",
+    "price": 204,
+    "boxQuantity": 12,
+    "image": "assets/products/520麻油瓶/main.jpg",
+    "url": "products/520麻油瓶.html"
+  },
+  {
+    "name": "563蜂蜜瓶",
+    "slug": "563蜂蜜瓶",
+    "price": 204,
+    "boxQuantity": 12,
+    "image": "assets/products/563蜂蜜瓶/main.jpg",
+    "url": "products/563蜂蜜瓶.html"
+  },
+  {
+    "name": "600圓蜂蜜瓶",
+    "slug": "600圓蜂蜜瓶",
+    "price": 216,
+    "boxQuantity": 12,
+    "image": "assets/products/600圓蜂蜜瓶/main.jpg",
+    "url": "products/600圓蜂蜜瓶.html"
   }
 ]
