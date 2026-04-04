@@ -54,6 +54,10 @@
     .site-footer a{color:var(--muted);text-decoration:none}
     .site-footer a:hover{text-decoration:underline}
 
+    @media(max-width:900px){
+      .product-grid{grid-template-columns:1fr}
+    }
+
     @media(max-width:600px){
       .site-header__inner{padding:10px 16px;min-height:52px}
       .site-logo{font-size:16px;min-width:0}
@@ -72,7 +76,7 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-logo" href="/glassflowlab-site-preview/">
-      <img src="assets/common/logo.png" alt="玻璃小店 logo">
+      <img src="/glassflowlab-site-preview/assets/common/logo.png" alt="玻璃小店 logo">
       <span>玻璃小店</span>
     </a>
     <nav class="site-nav">
@@ -87,8 +91,8 @@
 <main class="page">
   <section style="background:#fff;border-radius:20px;padding:40px 32px;margin-bottom:28px;text-align:center">
     <h1 style="font-size:36px;color:#2f251f;margin:0 0 12px">玻璃小店</h1>
-    <p style="font-size:18px;color:#6b5849;margin:0 0 20px">含蓋出貨的玻璃瓶選品</p>
-    <p style="font-size:15px;color:#9a8a7c;margin:0 0 24px">適合果醬、蜂蜜、醬料等分裝使用</p>
+    <p style="font-size:18px;color:#6b5849;margin:0 0 20px">果醬・蜂蜜・醬料專用玻璃瓶，含蓋出貨</p>
+    <p style="font-size:15px;color:#9a8a7c;margin:0 0 24px">台灣在地供應，現貨快速出貨・可自取或本島配送</p>
     <a class="btn-line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url" style="display:inline-flex;align-items:center;padding:14px 24px;background:#06c755;color:#fff;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px">LINE 詢問瓶款</a>
   </section>
 
@@ -96,7 +100,7 @@
     <span style="padding:8px 14px;background:#f1ebe4;border-radius:999px;font-size:13px;font-weight:700;color:#6f5b4b">✓ 含蓋出貨</span>
     <span style="padding:8px 14px;background:#f1ebe4;border-radius:999px;font-size:13px;font-weight:700;color:#6f5b4b">✓ 現貨供應</span>
     <span style="padding:8px 14px;background:#f1ebe4;border-radius:999px;font-size:13px;font-weight:700;color:#6f5b4b">✓ 桃園八德可自取</span>
-    <span style="padding:8px 14px;background:#f1ebe4;border-radius:999px;font-size:13px;font-weight:700;color:#6f5b4b">✓ 配送另計運費</span>
+    <span style="padding:8px 14px;background:#f1ebe4;border-radius:999px;font-size:13px;font-weight:700;color:#6f5b4b">✓ 本島配送到府</span>
     <span style="padding:8px 14px;background:#f1ebe4;border-radius:999px;font-size:13px;font-weight:700;color:#6f5b4b">✓ 線上通路 8,000+ 筆評價</span>
   </div>
 
@@ -105,7 +109,8 @@
     <p style="font-size:15px;color:#5b4a3e;line-height:1.8;margin:0">
       玻璃小店是台灣在地的玻璃容器小店，專注服務果醬、蜂蜜、醬料等分裝使用的需求。<br>
       不論你是手作品牌、小量試賣，還是穩定出貨中的商家，都能在這裡找到實用、安心的瓶器。<br>
-      我們相信一個合適的瓶子，不只影響保存，也會影響客人對產品的第一印象。
+      我們相信一個合適的瓶子，不只影響保存，也會影響客人對產品的第一印象。<br>
+      <strong>每款皆含蓋出貨</strong>，黑蓋、金蓋、綠蓋可選，省去額外採購麻煩。
     </p>
   </section>
 
@@ -202,7 +207,7 @@
 </main>
 
 <!-- FOOTER -->
-<footer style="background:#fff;border-top:1px solid #e7e0d7;padding:24px 20px">
+<footer class="site-footer" style="padding:24px 20px">
   <div style="max-width:1180px;margin:0 auto;text-align:center">
     <div style="margin-bottom:10px">
       <a href="/glassflowlab-site-preview/" style="color:#2f251f;font-weight:800;text-decoration:none;font-size:16px">玻璃小店</a>
