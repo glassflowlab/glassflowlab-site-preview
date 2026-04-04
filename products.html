@@ -6,47 +6,86 @@
   <title>全部商品｜玻璃小店</title>
   <style>
     :root{--bg:#f7f5f2;--card:#fff;--text:#222;--muted:#666;--line:#e7e0d7;--brand:#6f5b4b;--linegreen:#06c755}
-    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-    .layout{max-width:1180px;margin:0 auto;padding:20px;display:grid;grid-template-columns:240px 1fr;gap:24px}
-    .sidebar,.main,.card{background:#fff;border:1px solid var(--line);border-radius:18px}.sidebar,.main{padding:20px}.brand{display:flex;align-items:center;gap:10px;color:#3f332b;font-weight:800;text-decoration:none;margin-bottom:18px}.brand img{width:34px;height:34px;border-radius:8px}
-    .cat-link{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:#4d4036;background:#fcfbf9;margin-bottom:10px;font-weight:700}
-    .cat-link.active{border-color:#b08e73;background:#f6efe8;color:#2f251f}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
-    .card{overflow:hidden}.thumb{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff;border-bottom:1px solid var(--line)}.panel{padding:18px}.price{font-size:24px;font-weight:800;color:var(--brand)}.muted{color:#6b5849}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:800;background:var(--linegreen);color:#fff}
-    @media (max-width:900px){.layout{grid-template-columns:1fr}}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .wrap{max-width:1180px;margin:0 auto;padding:20px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:24px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;color:#3f332b;font-weight:800;text-decoration:none;font-size:18px}.brand img{width:34px;height:34px;border-radius:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid transparent}.btn.line{background:var(--linegreen);color:#fff}.btn.ghost{background:#fff;border-color:var(--line);color:#4d4036}
+    .sidebar{width:220px;flex-shrink:0}
+    .sidebar a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:#4d4036;background:#fcfbf9;margin-bottom:10px;font-weight:700;transition:border-color .15s}
+    .sidebar a:hover,.sidebar a.active{border-color:#b08e73;background:#f6efe8;color:#2f251f}
+    .sidebar .brand{margin-bottom:16px}
+    .layout{display:flex;gap:24px;align-items:flex-start}
+    .main{flex:1}
+    h1{margin:0 0 8px;font-size:28px;color:#2f251f}
+    .muted{color:#6b5849;font-size:14px;margin-bottom:20px}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .product-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+    .product-card .thumb-wrap{display:block;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff}
+    .product-card .thumb-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .2s}
+    .product-card .thumb-wrap:hover img{transform:scale(1.03)}
+    .product-card .panel{padding:16px;flex:1;display:flex;flex-direction:column}
+    .product-card h3{margin:0 0 8px;font-size:20px;color:#2f251f}
+    .product-card .price{font-size:22px;font-weight:800;color:var(--brand);margin-bottom:4px}
+    .product-card .price-sub{font-size:13px;color:#6b5849;margin-bottom:12px}
+    .product-card .btn{margin-top:auto;width:100%;text-align:center}
+    .footer{padding:24px 0;text-align:center;color:#7a695d;font-size:13px;border-top:1px solid var(--line);margin-top:32px}
+    @media(max-width:900px){.layout{flex-direction:column}.sidebar{width:100%}.sidebar a{display:inline-block;margin-right:8px;margin-bottom:8px}}
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <a class="brand" href="/glassflowlab-site-preview/"><img src="assets/common/logo.png" alt="玻璃小店 logo"><span>玻璃小店</span></a>
-      <a class="cat-link active" href="/glassflowlab-site-preview/products.html">全部商品</a>
-      <a class="cat-link" href="/glassflowlab-site-preview/category/寬口瓶.html">寬口瓶</a>
-    </aside>
-    <main class="main">
-      <h1 style="margin-top:0">全部商品</h1>
-      <p class="muted">可先從左側選分類，再進入商品頁查看完整規格與詢價資訊。</p>
-      <div class="grid">
-        <article class="card">
-          <img class="thumb" src="assets/products/100四方瓶/main.jpg" alt="100四方瓶主圖">
-          <div class="panel">
-            <h2>100四方瓶</h2>
-            <div class="price">NT$1,155 <span style="font-size:14px;font-weight:600">/ 箱（105支）</span></div>
-            <p class="muted">分類：寬口瓶</p>
-            <p><a class="btn" href="products/100四方瓶.html">看商品頁</a></p>
-          </div>
-        </article>
-        <article class="card">
-          <img class="thumb" src="assets/products/100六角瓶/main.jpg" alt="100六角瓶主圖">
-          <div class="panel">
-            <h2>100六角瓶</h2>
-            <div class="price">NT$475 <span style="font-size:14px;font-weight:600">/ 箱（50支）</span></div>
-            <p class="muted">分類：寬口瓶</p>
-            <p><a class="btn" href="products/100六角瓶.html">看商品頁</a></p>
-          </div>
-        </article>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/glassflowlab-site-preview/">
+        <img src="assets/common/logo.png" alt="玻璃小店 logo">
+        <span>玻璃小店</span>
+      </a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn ghost" href="category/寬口瓶.html">寬口瓶</a>
+        <a class="btn line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
       </div>
-    </main>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="brand" href="/glassflowlab-site-preview/">← 回首頁</a>
+        <a class="active" href="products.html">全部商品</a>
+        <a href="category/寬口瓶.html">寬口瓶</a>
+      </aside>
+
+      <main class="main">
+        <h1>全部商品</h1>
+        <p class="muted">點圖片或「看商品頁」皆可進入商品详情。</p>
+        <div class="product-grid">
+          <article class="product-card">
+            <a class="thumb-wrap" href="products/100六角瓶.html">
+              <img src="assets/products/100六角瓶/main.jpg" alt="100六角瓶主圖">
+            </a>
+            <div class="panel">
+              <h3>100六角瓶</h3>
+              <div class="price">NT$475</div>
+              <div class="price-sub">50支・寬口瓶</div>
+              <a class="btn ghost" href="products/100六角瓶.html">看商品頁</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <a class="thumb-wrap" href="products/100四方瓶.html">
+              <img src="assets/products/100四方瓶/main.jpg" alt="100四方瓶主圖">
+            </a>
+            <div class="panel">
+              <h3>100四方瓶</h3>
+              <div class="price">NT$1,155</div>
+              <div class="price-sub">105支・寬口瓶</div>
+              <a class="btn ghost" href="products/100四方瓶.html">看商品頁</a>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">
+      <a href="/" style="color:#7a695d;text-decoration:none">玻璃小店</a>｜商品價格為自取價，配送運費另計。
+    </div>
   </div>
 </body>
 </html>
