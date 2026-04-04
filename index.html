@@ -30,10 +30,10 @@
 
     /* category cards */
     .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:32px}
-    a.cat-card{display:flex;flex-direction:column;align-items:center;padding:24px 16px;background:#fff;border:2px solid var(--line);border-radius:18px;text-decoration:none;color:var(--dark);transition:all .2s;font-size:14px}
+    a.cat-card{display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:2px solid var(--line);border-radius:18px;text-decoration:none;color:var(--dark);transition:all .2s}
     a.cat-card:hover{border-color:#b08e73;box-shadow:0 6px 20px rgba(0,0,0,.09);transform:translateY(-2px)}
-    a.cat-card strong{display:block;font-size:18px;font-weight:800;color:#2f251f;margin-top:4px}
-    a.cat-card span{display:block;font-size:13px;color:#9a8a7c;margin-top:4px}
+    a.cat-card strong{display:block;font-size:16px;font-weight:800;color:#2f251f}
+    a.cat-card span{display:block;font-size:13px;color:#9a8a7c}
     a.cat-card strong{display:block;font-size:20px;margin-bottom:6px;color:var(--dark)}
     a.cat-card span{font-size:13px;color:var(--muted)}
 
@@ -106,33 +106,32 @@
 
   <h2 class="section-title" style="margin-top:8px">商品分類</h2>
   <div class="cat-grid" style="margin-bottom:28px">
-    <a class="cat-card" href="/glassflowlab-site-preview/category/寬口瓶.html" style="text-align:center">
-      <div style="margin-bottom:10px">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="12" y="14" width="24" height="26" rx="4" fill="#e8e0d4" stroke="#8a7a6a" stroke-width="2"/>
-          <rect x="16" y="10" width="16" height="6" rx="2" fill="#8a7a6a"/>
-          <rect x="18" y="8" width="12" height="4" rx="1" fill="#6b5849"/>
-          <rect x="16" y="20" width="16" height="1" fill="#c4b8a8"/>
-          <rect x="16" y="26" width="16" height="1" fill="#c4b8a8"/>
-          <rect x="16" y="32" width="16" height="1" fill="#c4b8a8"/>
-        </svg>
+    <a class="cat-card" href="/glassflowlab-site-preview/category/寬口瓶.html">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="10" width="20" height="20" rx="3" fill="#e8e0d4" stroke="#8a7a6a" stroke-width="1.5"/>
+        <rect x="11" y="7" width="14" height="5" rx="1.5" fill="#8a7a6a"/>
+        <rect x="13" y="5" width="10" height="3.5" rx="1" fill="#6b5849"/>
+        <line x1="11" y1="15" x2="25" y2="15" stroke="#c4b8a8" stroke-width="1"/>
+        <line x1="11" y1="20" x2="25" y2="20" stroke="#c4b8a8" stroke-width="1"/>
+        <line x1="11" y1="25" x2="25" y2="25" stroke="#c4b8a8" stroke-width="1"/>
+      </svg>
+      <div>
+        <strong>寬口瓶</strong>
+        <span>查看分類 →</span>
       </div>
-      <strong>寬口瓶</strong>
-      <span>查看分類 →</span>
     </a>
-    <a class="cat-card" href="#" style="text-align:center">
-      <div style="margin-bottom:10px;opacity:0.5">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="17" y="18" width="14" height="22" rx="3" fill="#e8e0d4" stroke="#8a7a6a" stroke-width="2"/>
-          <rect x="19" y="14" width="10" height="6" rx="2" fill="#8a7a6a"/>
-          <rect x="21" y="11" width="6" height="5" rx="2" fill="#6b5849"/>
-          <rect x="19" y="23" width="10" height="1" fill="#c4b8a8"/>
-          <rect x="19" y="29" width="10" height="1" fill="#c4b8a8"/>
-          <rect x="19" y="35" width="10" height="1" fill="#c4b8a8"/>
-        </svg>
+    <a class="cat-card" href="#">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.5">
+        <rect x="12" y="13" width="12" height="17" rx="2.5" fill="#e8e0d4" stroke="#8a7a6a" stroke-width="1.5"/>
+        <rect x="14" y="9" width="8" height="5" rx="1.5" fill="#8a7a6a"/>
+        <rect x="15.5" y="6.5" width="5" height="4" rx="1.5" fill="#6b5849"/>
+        <line x1="14" y1="18" x2="22" y2="18" stroke="#c4b8a8" stroke-width="1"/>
+        <line x1="14" y1="23" x2="22" y2="23" stroke="#c4b8a8" stroke-width="1"/>
+      </svg>
+      <div>
+        <strong>窄口瓶</strong>
+        <span>整理中</span>
       </div>
-      <strong>窄口瓶</strong>
-      <span>整理中</span>
     </a>
   </div>
 
