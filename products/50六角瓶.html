@@ -19,6 +19,12 @@
     .site-nav a.btn-home:hover,.site-nav a.active{background:#f6efe8;border-color:#b08e73}
     .site-nav a.btn-line{background:var(--green);color:#fff;border-color:var(--green)}
     .site-nav a.btn-line:hover{background:#05a348}
+
+    /* ===== SHARED BUTTON SYSTEM ===== */
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer;font-size:14px}
+    .btn.line{background:var(--linegreen);color:#fff}
+    .btn.ghost{background:#fff;border-color:var(--line);color:#4d4036}
+    .btn.sm{padding:7px 13px;font-size:13px}
     .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
     .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
     .panel{padding:24px}
@@ -31,12 +37,12 @@
     .thumb{border:1px solid var(--line);border-radius:12px;padding:6px;background:#faf8f5;text-align:center;font-size:12px;color:var(--muted);cursor:pointer}
     .thumb.active{border-color:#b08e73;box-shadow:0 0 0 2px rgba(169,138,114,.12) inset}
     .subimg{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#fff}
-    .eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--brand);font-size:12px;font-weight:700;margin-bottom:12px}
+    .eyebrow{display:inline-block;padding:6px 10px;background:#f1ebe4;border-radius:999px;color:var(--warm);font-size:12px;font-weight:700;margin-bottom:12px}
     h1{font-size:32px;line-height:1.2;margin:0 0 10px;color:#2f251f}
     h2{font-size:22px;line-height:1.25;margin:0 0 14px;color:#342922}
     .subtitle{font-size:15px;color:#5b4a3e;margin:0 0 16px}
     .price-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-    .price-lg{font-size:32px;font-weight:800;color:var(--brand)}
+    .price-lg{font-size:32px;font-weight:800;color:var(--warm)}
     .price-unit{font-size:16px;color:var(--muted)}
     .price-sub{margin-top:6px;font-size:14px;color:#6f5b4b}
     .info-strip{display:grid;gap:8px;margin:18px 0;padding:14px;background:#fbf7f2;border:1px solid var(--line);border-radius:12px}
@@ -87,7 +93,7 @@
     </a>
     <nav class="site-nav">
       <a class="btn-home" href="/glassflowlab-site-preview/">回首頁</a>
-      <a class="btn-home" href="/glassflowlab-site-preview/products.html">全部商品</a>
+      <a class="btn-home active" href="/glassflowlab-site-preview/products.html">全部商品</a>
       <a class="btn-line" href="https://line.me/R/ti/p/@lrg1884b?ts=09121613&oat_content=url">LINE 詢價</a>
     </nav>
   </div>
@@ -192,10 +198,6 @@
       <details open>
         <summary>價格有含運嗎？</summary>
         <p>本頁 NT$456 為自取價，配送運費另計。</p>
-      </details>
-      <details>
-        <summary>商品有含蓋嗎？</summary>
-        <p>有。</p>
       </details>
       <details>
         <summary>最少要買多少？可以散買嗎？</summary>
