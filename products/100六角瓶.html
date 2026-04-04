@@ -12,8 +12,8 @@
     .site-header__inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
     .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);font-size:18px;font-weight:800;flex-shrink:0}
     .site-logo img{width:34px;height:34px;border-radius:8px;display:block}
-    .site-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .site-nav a{display:inline-flex;align-items:center;padding:8px 14px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:700;border:1px solid transparent;transition:all .15s}
+    .site-nav{display:flex;gap:8px;align-items:center}
+    .site-nav a{display:inline-flex;align-items:center;padding:8px 14px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:700;border:1px solid transparent;transition:all .15s;white-space:nowrap}
     .site-nav a.btn-home{border-color:#d4cdc6;color:var(--dark);background:#fff}
     .site-nav a.btn-home:hover,.site-nav a.active{background:#f6efe8;border-color:#b08e73}
     .site-nav a.btn-line{background:var(--green);color:#fff;border-color:var(--green)}
@@ -75,7 +75,7 @@
     .site-footer a{color:var(--muted);text-decoration:none}
     .site-footer a:hover{text-decoration:underline}
     @media(max-width:900px){.product-layout,.steps{grid-template-columns:1fr}.thumbs{grid-template-columns:repeat(5,minmax(64px,1fr));overflow:auto}.sticky-inner{flex-direction:column;align-items:flex-start}.sticky-inner .btn{width:100%}}}
-    @media(max-width:600px){.site-header__inner{padding:10px 16px}.site-nav{gap:6px;flex-wrap:nowrap}.site-nav a{padding:7px 10px;font-size:13px}.site-logo{font-size:16px}.site-logo img{width:28px;height:28px}}
+    @media(max-width:600px){.site-header__inner{padding:10px 16px;min-height:52px}.site-logo{font-size:16px;min-width:0}.site-logo img{width:28px;height:28px}.site-logo span{white-space:nowrap}.site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px}.site-nav a{padding:7px 10px;font-size:13px}}
   </style>
 </head>
 <body>
