@@ -162,6 +162,10 @@ def make_itemlist_jsonld(products: list, list_name: str, description: str) -> di
         ]
     }
 
+def remove_existing_jsonld(html: str) -> str:
+    """移除所有現有的 application/ld+json script(避免重複)。"""
+    return re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', html, flags=re.DOTALL)
+
 def inject_jsonld(html: str, jsonld: dict, position: str = "before-style") -> str:
     """注入 JSON-LD。position: 'before-style' 或 'before-head-close'"""
     jsonld_str = json.dumps(jsonld, ensure_ascii=False, indent=2)
@@ -195,6 +199,7 @@ def main():
             fail += 1
             continue
         html = html_path.read_text()
+        html = remove_existing_jsonld(html)
         specs = parse_specs_from_html(html)
         jsonld = make_product_jsonld(product, specs)
         new_html = inject_jsonld(html, jsonld)
@@ -220,6 +225,7 @@ def main():
         if cat_products:
             list_jsonld = make_itemlist_jsonld(cat_products, cat_title, cat_desc)
             html = cat_path.read_text()
+            html = remove_existing_jsonld(html)
             new_html = inject_jsonld(html, list_jsonld)
             cat_path.write_text(new_html)
             print(f"[OK]   分類頁 {cat_name}: 注入 ItemList({len(cat_products)} 個商品)")
