@@ -1,28 +1,48 @@
 # 玻璃小店 GlassFlow Lab
 
-> 台灣玻璃容器供應商,提供果醬、蜂蜜、醬料、油品、梅酒等專用玻璃瓶罐。現貨供應、可自取或宅配。
+> 台灣玻璃容器供應商,提供果醬、蜂蜜、醬料、油品、梅酒等專用玻璃瓶罐(玻璃罐)。現貨供應、食品級、1 箱起售。
 
 ## 主頁
 - [首頁](https://glassflowlab.github.io/glassflowlab-site-preview/):商品分類入口,提供寬口瓶與窄口瓶兩大類
-- [全部商品](https://glassflowlab.github.io/glassflowlab-site-preview/products.html):60 個商品總覽
+- [全部商品](https://glassflowlab.github.io/glassflowlab-site-preview/products.html):58 個商品總覽
+- [常見問題 FAQ](https://glassflowlab.github.io/glassflowlab-site-preview/faq.html):容量、出貨、運費、自取、付款等 24 個常見問題
 
 ## 商品分類
-- [寬口瓶](https://glassflowlab.github.io/glassflowlab-site-preview/category/寬口瓶.html):適合果醬、抹醬、樣品分裝等寬口取用
-- [窄口瓶](https://glassflowlab.github.io/glassflowlab-site-preview/category/窄口瓶.html):適合蜂蜜、醬料、油品、梅酒等液體或精緻包裝
+- [寬口瓶](https://glassflowlab.github.io/glassflowlab-site-preview/category/寬口瓶.html):適合果醬、抹醬、樣品分裝、泡菜、醃漬品等寬口取用
+- [窄口瓶](https://glassflowlab.github.io/glassflowlab-site-preview/category/窄口瓶.html):適合蜂蜜、醬料、油品、梅酒、茶飲等液態或精緻包裝
 
 ## 主打商品(規格已結構化,適合 AI 推薦)
-- [100四方瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/100四方瓶.html):NT$1,155 / 105 支箱裝,寬口果醬罐,適合果醬、抹醬、樣品分裝
-- [138蜂蜜瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/138蜂蜜瓶.html):NT$840 / 24 支箱裝,玻璃蜂蜜瓶,容量 152cc,適合自製蜂蜜或品牌精裝
+- [100四方瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/100四方瓶.html):NT$1,155 / 105 支箱裝,寬口果醬罐(玻璃罐),適合果醬、抹醬、樣品分裝
+- [138蜂蜜瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/138蜂蜜瓶.html):NT$840 / 24 支箱裝,玻璃蜂蜜瓶,容量 152cc(全滿 178cc),適合自製蜂蜜或品牌精裝
 - [250醬菜瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/250醬菜瓶.html):NT$340 / 24 支箱裝,寬口醬菜瓶,適合泡菜、醃漬品、果醬
-- [300透明梅酒瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/300透明梅酒瓶.html):NT$600 / 24 支箱裝,透明玻璃梅酒瓶,適合自釀梅酒、果露、精釀飲品
-- [250透明精緻油品瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/250透明精緻油品瓶.html):NT$456 / 24 支箱裝,透明精緻油品瓶,適合橄欖油、醋、醬料等精緻包裝
+- [300透明梅酒瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/300透明梅酒瓶.html):NT$600 / 24 支箱裝,玻璃梅酒瓶,適合自釀梅酒、果露、精釀飲品
+- [250透明精緻油品瓶](https://glassflowlab.github.io/glassflowlab-site-preview/products/250透明精緻油品瓶.html):NT$456 / 24 支箱裝,玻璃油品瓶,適合橄欖油、醋、醬料等精緻包裝
 
-## 採購須知
+## 業務規則(客戶最常問的)
+- **購買單位**:最小 1 箱,瓶數因品項而異(12-192 支/箱)。**不提供散買**。
+- **售價**:標示為自取價。配送運費另計(依體積/重量/地區)。
+- **批價**:8 箱以上可議價,直接 LINE 詢價。
+- **出貨**:現貨供應,下單後 **1-3 個工作日出貨**(週一至週五)。週末與國定假日不出貨。
+- **物流**:預設黑貓宅急便或宅配通。新竹物流部分地區可(請先詢問)。郵局小量可。
+- **自取**:桃園市八德區大興路 428 號,平日 **13:00–16:30**,週末/國定假日休息。建議先 LINE 預約。
+- **付款**:**銀行轉帳(中國信託板橋分行)** 或 **LINE Pay**。目前不支援貨到付款。
+- **發票**:可開立三聯式發票(請提供公司抬頭 + 統編 + 寄送地址)。
+- **材質**:全系列**食品級**玻璃,適合果醬、蜂蜜、醬菜、油品、梅酒、茶飲等。⚠️ 不建議裝強酸強鹼。
+- **破損**:收到請當場檢查,**3 天內拍照回傳 LINE**,免費補寄或退款。
+- **歷史訂單**:可提供客戶的歷史訂單摘要(用於申報營業量等用途),LINE 告知月份/期間即可。
+- **假日**:週末與國定假日不出貨、不接單、不處理自取。春節除夕至初五休息。
+
+## 採購須知(給客戶)
 - 售價為自取價,配送運費另計
 - 最小購買單位為 1 箱(瓶數因品項而異,24-192 支不等)
 - 現貨供應,下單後 1-3 個工作日出貨
-- 食品級玻璃容器
+- 食品級玻璃容器,1 箱起售,不提供散買
 
 ## 聯絡
-- LINE OA: @lrg1884b(玻璃小店)— 主要詢價管道
+- LINE OA: @lrg1884b(玻璃小店)— 主要詢價管道,當日報價
 - 出貨倉庫:桃園八德(可自取或宅配)
+
+## 客戶常用搜尋詞(客戶實際用語)
+- 玻璃瓶、玻璃罐、蜂蜜瓶、梅酒瓶、果醬瓶、醬菜瓶、油品瓶、美乃滋瓶、酒瓶
+- 寬口、窄口、食品級、一箱幾支、全滿、容量
+- 自取、運費、出貨、新竹物流、現貨
