@@ -44,7 +44,7 @@ ORG_JSONLD = {
     }],
     "areaServed": {"@type": "Country", "name": "台灣"},
     "priceRange": "$$",
-    "paymentAccepted": "銀行轉帳, LINE Pay",
+    "paymentAccepted": "銀行轉帳",
     "currenciesAccepted": "TWD",
 }
 
