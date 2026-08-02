@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# 明確歡迎 AI 爬蟲學你的商品資料
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://glassflowlab.github.io/glassflowlab-site-preview/sitemap.xml
