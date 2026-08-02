@@ -5,7 +5,6 @@
 ## 主頁
 - [首頁](https://glassflowlab.github.io/glassflowlab-site-preview/):商品分類入口,提供寬口瓶與窄口瓶兩大類
 - [全部商品](https://glassflowlab.github.io/glassflowlab-site-preview/products.html):58 個商品總覽
-- [常見問題 FAQ](https://glassflowlab.github.io/glassflowlab-site-preview/faq.html):容量、出貨、運費、自取、付款等 22 個常見問題
 
 ## 商品分類
 - [寬口瓶](https://glassflowlab.github.io/glassflowlab-site-preview/category/寬口瓶.html):適合果醬、抹醬、樣品分裝、泡菜、醃漬品等寬口取用
